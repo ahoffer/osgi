@@ -4,6 +4,12 @@
            xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
     <!--xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"-->
 
-    <bean id="fun" class="Fun"/>
-    <service id="funService" ref="fun" interface="FunService"/>
+    <!-- It gets a little magical with blueprint. First, we instantiate a bean. It is a singleton. We
+    can reference it by the ID "fun". The bean is the service implementor and its class is "Fun" -->
+    <bean id="fun" class="funservice.Fun"/>
+
+    <!-- More magic. Declare a service. It can be referenced by its ID, "funService". The service's
+    API is defined by the interface "FunService". -->
+    <service id="funService" ref="fun" interface="funservice.FunService"/>
+
 </blueprint>

@@ -1,5 +1,7 @@
 package funservice;
 
+// The implementation of a service interface. This is essentially a bean that implements
+// an interface.
 public class Fun implements FunService {
 
     private String someProperty;

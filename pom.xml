@@ -6,7 +6,7 @@
 
     <groupId>org.hoffer</groupId>
     <artifactId>osgi-experiment</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.2</version>
     <packaging>pom</packaging>
     <properties>
         <source>1.8</source>
