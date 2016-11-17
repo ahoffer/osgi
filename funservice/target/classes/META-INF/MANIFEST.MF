@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1479362261721
+Build-Jdk: 1.8.0_60
+Built-By: Live
+Bundle-Blueprint: OSGI-INF/blueprint/blueprint.xml
+Bundle-ManifestVersion: 2
+Bundle-Name: funservice
+Bundle-SymbolicName: funservice
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: funservice;version="1.0.0"
+Export-Service: FunThingService
+Import-Package: org.osgi.service.blueprint;version="[1.0.0,2.0.0)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.5))"
+Tool: Bnd-3.2.0.201605172007
