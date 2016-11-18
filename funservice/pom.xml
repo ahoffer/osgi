@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>osgi-experiment</artifactId>
@@ -14,13 +14,13 @@
      adding OSGi headers to the to META-INF/MANIFEST.MF file, and including the blueprint file
       in the OSGI-ING/bluprint directory. -->
     <packaging>bundle</packaging>
-
     <!--Every POM file that builds a bundle needs to include the bundle plugin. -->
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.2.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -29,14 +29,12 @@
                         use the Activator to print messages just to test stopping and
                         starting bundles. -->
                         <Bundle-Activator>funservice.FunActivator</Bundle-Activator>
-
                     </instructions>
                 </configuration>
             </plugin>
         </plugins>
     </build>
     <dependencies>
-
         <!--This one is a bit of poser. I had no idea what package, what maven artifact to include-->
         <!--in the dependencies. I picked this one and it just worked!-->
         <dependency>
@@ -44,6 +42,5 @@
             <artifactId>org.osgi.core</artifactId>
             <version>4.3.1</version>
         </dependency>
-        
     </dependencies>
 </project>
