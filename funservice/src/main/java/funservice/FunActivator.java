@@ -7,11 +7,11 @@ import org.osgi.framework.BundleContext;
 // just to test installing, starting, stopping, and uninstalling bundles.
 public class FunActivator implements BundleActivator {
     public void start(BundleContext context) throws Exception {
-        System.out.println("******* FUN START **********");
+        System.out.println("******* FUN SERVICE START **********");
     }
 
     public void stop(BundleContext context) throws Exception {
-        System.out.println("******* FUN STOP **********");
+        System.out.println("******* FUN SERVICE STOP **********");
 
     }
 }

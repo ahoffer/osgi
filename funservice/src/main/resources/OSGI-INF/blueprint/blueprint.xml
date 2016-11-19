@@ -7,7 +7,7 @@
     <!-- It gets a little magical with blueprint. First, we instantiate a bean. It is a singleton. We
     can reference it by the ID "fun". The bean is the service implementor and its class is "Fun" -->
     <bean id="fun" class="funservice.Fun">
-        <property name="someProperty" value="account"/>
+        <property name="someProperty" value="fizz"/>
     </bean>
 
     <!-- More magic. Declare a service. It can be referenced by its ID, "funService". The service's

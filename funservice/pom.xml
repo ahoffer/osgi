@@ -5,7 +5,7 @@
     <parent>
         <artifactId>osgi-experiment</artifactId>
         <groupId>org.hoffer</groupId>
-        <version>1.2</version>
+        <version>1.2.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>funservice</artifactId>
@@ -29,6 +29,7 @@
                         use the Activator to print messages just to test stopping and
                         starting bundles. -->
                         <Bundle-Activator>funservice.FunActivator</Bundle-Activator>
+                        <Bundle-SymbolicName>funservice</Bundle-SymbolicName>
                     </instructions>
                 </configuration>
             </plugin>
