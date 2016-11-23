@@ -1,35 +1,41 @@
 package funservice;
 
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleEvent;
 import org.osgi.framework.BundleListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-// Test installing and uninstalling bundles.
-// just to test installing, starting, stopping, and uninstalling bundles.
 public class FunActivator implements BundleActivator, BundleListener {
 
+    // The Logger and LoggerFactory definitions are pulled in through an slf4j library pulled
+    // in a as a Maven dependency. The logger implementation is probably provided by
+    // OPS4j Pax Logging bundle that is a part of the Karaf distribution.
+    //
+    //
+    private final Logger logger = LoggerFactory.getLogger(FunActivator.class);
+
     public void start(BundleContext context) throws Exception {
-        String symbolicName = context.getBundle().getSymbolicName();
-        String eventName = EventLexicon.lookup(context.getBundle());
-        printMessage(symbolicName, eventName);
+        Bundle bundle = context.getBundle();
+        printMessage("start()-" + bundle.getSymbolicName(), bundle.getState());
         context.addBundleListener(this);
     }
 
     public void stop(BundleContext context) throws Exception {
-        String symbolicName = context.getBundle().getSymbolicName();
-        String eventName = EventLexicon.lookup(context.getBundle());
-        printMessage(symbolicName, eventName);
+        Bundle bundle = context.getBundle();
+        printMessage("stop()-" + bundle.getSymbolicName(), bundle.getState());
         context.removeBundleListener(this);
     }
 
     public void bundleChanged(BundleEvent bundleEvent) {
-        String symbolicName = bundleEvent.getBundle().getSymbolicName();
-        String eventName = EventLexicon.lookup(bundleEvent.getType());
-        printMessage(symbolicName, eventName);
+        Bundle bundle = bundleEvent.getBundle();
+        printMessage("bundleChanged()-"+bundle.getSymbolicName(), bundleEvent.getType());
     }
 
-    private void printMessage(String name, String state) {
-        System.err.println(String.format("Bundle '%s' Event '%s'", name, state));
+    private void printMessage(String bundleName, int bundleState) {
+        String eventName = EventLexicon.lookup(bundleState);
+        logger.warn("Bundle {} {}", bundleName, eventName);
     }
 }
