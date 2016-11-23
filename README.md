@@ -1,12 +1,8 @@
 # osgi
 
 Learning:
-
+- bundle listener
 
 
 Demonstrate: 
-- install
-- start
-- stop
-- update
-- uninstall 
+ 
