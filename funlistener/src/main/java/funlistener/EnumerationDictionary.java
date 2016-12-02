@@ -60,7 +60,7 @@ public class EnumerationDictionary {
             case Bundle.UNINSTALLED:
                 return "UNINSTALLED";
             default:
-                return "unknown bundle state: " + state;
+                return String.valueOf(state);
         }
     }
 
