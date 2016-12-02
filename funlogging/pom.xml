@@ -8,9 +8,9 @@
         <version>1.2.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>01</artifactId>
+    <artifactId>02</artifactId>
     <properties>
-        <bundleName>funbundle</bundleName>
+        <bundleName>funlogging</bundleName>
         <packageName>${bundleName}</packageName>
     </properties>
     <!--The packaging directive tells maven to make a bundle and not a jar. AFAIK, that means
@@ -18,6 +18,13 @@
       in the OSGI-ING/bluprint directory. -->
     <packaging>bundle</packaging>
     <!--Every POM file that builds a bundle needs to include the bundle plugin. -->
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.21</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>

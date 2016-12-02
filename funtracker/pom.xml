@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>fun</artifactId>
-        <groupId>fun</groupId>
+        <artifactId>_</artifactId>
+        <groupId>lesson</groupId>
         <version>1.2.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>funtracker</artifactId>
+    <artifactId>04</artifactId>
+    <packaging>bundle</packaging>
     <dependencies>
         <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>6.0.0</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.21</version>
         </dependency>
-    </dependencies>
-</project>
+    <dependency>
+        <groupId>fun</groupId>
+        <artifactId>funlistener</artifactId>
+        <version>1.2.0-SNAPSHOT</version>
+    </dependency>
+</dependencies>
+<build>
+<plugins>
+    <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>3.2.0</version>
+        <extensions>true</extensions>
+        <configuration>
+            <instructions>
+                <Bundle-Activator>funtracker.Activator</Bundle-Activator>
+                <Bundle-SymbolicName>funtracker</Bundle-SymbolicName>
+            </instructions>
+        </configuration>
+    </plugin>
+</plugins>
+</build>
+        </project>

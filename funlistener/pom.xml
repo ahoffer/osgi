@@ -3,12 +3,12 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>fun</artifactId>
-        <groupId>fun</groupId>
+        <artifactId>_</artifactId>
+        <groupId>lesson</groupId>
         <version>1.2.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>funlistener</artifactId>
+    <artifactId>03</artifactId>
     <packaging>bundle</packaging>
     <dependencies>
         <dependency>
@@ -26,11 +26,10 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-Activator>funlistener.FunListener</Bundle-Activator>
+                        <Bundle-Activator>funlistener.Activator</Bundle-Activator>
                         <Bundle-SymbolicName>funlistener</Bundle-SymbolicName>
                     </instructions>
                 </configuration>
-
             </plugin>
         </plugins>
     </build>
