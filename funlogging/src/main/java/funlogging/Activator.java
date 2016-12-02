@@ -9,10 +9,10 @@ public class Activator implements BundleActivator {
     private static final Logger logger = LoggerFactory.getLogger(Activator.class);
 
     public void start(BundleContext context) throws Exception {
-        logger.info("FUNLOGGING start()");
+        logger.info("funlogging-start()");
     }
 
     public void stop(BundleContext context) throws Exception {
-        logger.info("FUNLOGGING stop()");
+        logger.info("funlogging-stop()");
     }
 }

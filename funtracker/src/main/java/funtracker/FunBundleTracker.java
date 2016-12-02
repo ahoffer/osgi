@@ -9,13 +9,12 @@ import org.osgi.util.tracker.BundleTrackerCustomizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+class FunBundleTracker extends BundleTracker {
 
-class MyBundleTracker extends BundleTracker {
+    private static Logger logger = LoggerFactory.getLogger(FunBundleTracker.class);
 
-    private static Logger logger = LoggerFactory.getLogger(MyBundleTracker.class);
-
-    public MyBundleTracker(BundleContext context, int stateMask,
-                           BundleTrackerCustomizer customizer) {
+    public FunBundleTracker(BundleContext context, int stateMask,
+                            BundleTrackerCustomizer customizer) {
         super(context, stateMask, customizer);
     }
 
@@ -23,24 +22,28 @@ class MyBundleTracker extends BundleTracker {
         // Typically we would inspect bundle, to figure out if we want to
         // track it or not. If we don't want to track, then return null.
         // Otherwise return the bundle.
-        print(bundle, event);
+        print("addingBundle", bundle, event);
         return bundle;
-    }
-
-    private void print(Bundle bundle, BundleEvent event) {
-        String symbolicName = bundle.getSymbolicName();
-        String state = EnumerationDictionary.lookupState(bundle);
-        String type = EnumerationDictionary.lookupEvent(event);
-        System.out.println("[BT] " + symbolicName + ", state: " + state + ", event.type: " + type);
     }
 
     public void removedBundle(Bundle bundle, BundleEvent event,
                               Object object) {
-        print(bundle, event);
+        print("removedBundle", bundle, event);
     }
 
     public void modifiedBundle(Bundle bundle, BundleEvent event,
                                Object object) {
-        print(bundle, event);
+        print("modifiedBundle", bundle, event);
+    }
+
+    private void print(String methodName, Bundle bundle, BundleEvent event) {
+        String symbolicName = bundle.getSymbolicName();
+        String stateName = EnumerationDictionary.lookupState(bundle);
+        String eventName = EnumerationDictionary.lookupEvent(event);
+        logger.info("{}(bundle={}, state={}, event={})",
+                methodName,
+                symbolicName,
+                stateName,
+                eventName);
     }
 }

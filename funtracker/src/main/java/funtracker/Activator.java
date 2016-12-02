@@ -5,12 +5,18 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
-    private MyBundleTracker bundleTracker;
+
+    private FunBundleTracker bundleTracker;
 
     public void start(BundleContext context) throws Exception {
         System.out.println("Starting Bundle Tracker");
-        int trackStates = Bundle.STARTING | Bundle.STOPPING | Bundle.RESOLVED | Bundle.INSTALLED | Bundle.UNINSTALLED;
-        bundleTracker = new MyBundleTracker(context, trackStates, null);
+        int trackStates = Bundle.STARTING
+                | Bundle.STOPPING
+                | Bundle.RESOLVED
+                | Bundle.INSTALLED
+                | Bundle.UNINSTALLED
+                | Bundle.ACTIVE;
+        bundleTracker = new FunBundleTracker(context, trackStates, null);
         bundleTracker.open();
     }
 

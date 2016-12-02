@@ -9,7 +9,7 @@ public class EnumerationDictionary {
 
     public static String lookupEvent(BundleEvent event) {
         if (event == null) {
-            return "(Null Bundle Event)";
+            return "null";
         }
         return lookupEvent(event.getType());
     }
