@@ -63,5 +63,4 @@ public class EnumerationDictionary {
                 return String.valueOf(state);
         }
     }
-
 }

@@ -42,6 +42,6 @@ public class Activator implements BundleActivator, BundleListener {
         // The next event to be triggered is the STARTED event.
         // When the bundle transitions from ACTIVE to RESOLVED, the listener is first unregistered.
         // When the STOPPED event is triggered, the listener is already unregistered.
-        logger.error("Bundle {} Event {}", event.getBundle().getSymbolicName(), EnumerationDictionary.lookupEvent(event));
+        logger.warn("funlistener: Bundle {} Event {}", event.getBundle().getSymbolicName(), EnumerationDictionary.lookupEvent(event));
     }
 }
