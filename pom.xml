@@ -19,6 +19,7 @@
         <module>funtracker</module>
         <module>funlistener</module>
         <module>funservice</module>
+        <module>funclient</module>
     </modules>
     <dependencies>
         <!--This one is a bit of poser. I had no idea what package, what maven artifact to include-->
