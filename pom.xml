@@ -6,7 +6,7 @@
 
     <groupId>lesson</groupId>
     <artifactId>_</artifactId>
-    <version>1.2.0-SNAPSHOT</version>
+    <version>0.1.0</version>
     <packaging>pom</packaging>
     <properties>
         <source>1.8</source>
@@ -14,13 +14,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <modules>
-        <module>funbundle</module>
-        <module>funlogging</module>
-        <module>funtracker</module>
-        <module>funlistener</module>
-        <module>funservice</module>
-        <module>funclient</module>
-        <module>funapi</module>
+        <module>bundle-lesson</module>
+        <module>tracker-lesson</module>
+        <module>bundle-listener-lesson</module>
+        <module>logging-lesson</module>
+        <module>client-lesson</module>
+        <module>service-lesson</module>
+        <module>api-lesson</module>
+        <module>providers-lesson</module>
     </modules>
     <dependencies>
         <!--This one is a bit of poser. I had no idea what package, what maven artifact to include-->

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>_</artifactId>
+        <groupId>lesson</groupId>
+        <version>0.1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>01</artifactId>
+    <properties>
+        <bundleName>bundle-lesson</bundleName>
+        <packageName>${bundleName}</packageName>
+    </properties>
+    <!--The packaging directive tells maven to make a bundle and not a jar. AFAIK, that means
+     adding OSGi headers to the to META-INF/MANIFEST.MF file, and including the blueprint file
+      in the OSGI-ING/bluprint directory. -->
+    <packaging>bundle</packaging>
+    <!--Every POM file that builds a bundle needs to include the bundle plugin. -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.2.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <!-- This section lets you add OSGi headers to the MANIFEST.MF
+                    We add a header to tell OSGi there is an Activator class. We use the
+                    use the Activator to print messages just to test stopping and
+                    starting bundles. -->
+                    <instructions>
+                        <!--Bundle-Activator is the full class name (e.g. org.foo.bar.Activator).
+                        It is packagename.ClassName. I use the same name for the package and the
+                        bundle, so bundlename.Activator is the same as packagename.Activator.-->
+                        <Bundle-Activator>${packageName}.Activator</Bundle-Activator>
+                        <Bundle-SymbolicName>${bundleName}</Bundle-SymbolicName>
+                        <!--If Bundle-Name is not set, BND (mavin bundle plugin) will use
+                         the maven artifact ID as the Bundle-Name. -->
+                        <Bundle-Name>${bundleName}</Bundle-Name>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
