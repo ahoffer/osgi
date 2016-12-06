@@ -11,11 +11,11 @@
     <artifactId>01</artifactId>
     <properties>
         <bundleName>bundle-lesson</bundleName>
-        <packageName>${bundleName}</packageName>
+        <packageName>bundle</packageName>
     </properties>
     <!--The packaging directive tells maven to make a bundle and not a jar. AFAIK, that means
      adding OSGi headers to the to META-INF/MANIFEST.MF file, and including the blueprint file
-      in the OSGI-ING/bluprint directory. -->
+      in the OSGI-INF/bluprint directory. -->
     <packaging>bundle</packaging>
     <!--Every POM file that builds a bundle needs to include the bundle plugin. -->
     <build>
@@ -36,10 +36,9 @@
                         bundle, so bundlename.Activator is the same as packagename.Activator.-->
                         <Bundle-Activator>${packageName}.Activator</Bundle-Activator>
                         <Bundle-SymbolicName>${bundleName}</Bundle-SymbolicName>
-                        <!--If Bundle-Name is not set, BND (mavin bundle plugin) will use
+                        <!--If Bundle-Name is not set, BND (Maven bundle plugin) will use
                          the maven artifact ID as the Bundle-Name. -->
-                        <Bundle-Name>${bundleName}</Bundle-Name>
-                    </instructions>
+                        <Bundle-Name>${bundleName}</Bundle-Name></instructions>
                 </configuration>
             </plugin>
         </plugins>

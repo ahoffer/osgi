@@ -23,8 +23,8 @@
         </dependency>
     </dependencies>
     <properties>
-        <bundleName>providers</bundleName>
-        <packageName>${bundleName}</packageName>
+        <bundleName>providers-lesson</bundleName>
+        <packageName>providers</packageName>
     </properties>
     <build>
         <plugins>

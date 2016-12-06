@@ -10,8 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>02</artifactId>
     <properties>
-        <bundleName>logging</bundleName>
-        <packageName>${bundleName}</packageName>
+        <bundleName>logging-lesson</bundleName>
+        <packageName>logging</packageName>
     </properties>
     <!--The packaging directive tells maven to make a bundle and not a jar. AFAIK, that means
      adding OSGi headers to the to META-INF/MANIFEST.MF file, and including the blueprint file

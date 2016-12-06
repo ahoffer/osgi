@@ -24,6 +24,7 @@
     </dependencies>
     <properties>
         <bundleName>client-lesson</bundleName>
+        <packageName>client</packageName>
     </properties>
     <build>
         <plugins>
@@ -34,7 +35,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-Activator>${bundleName}.Activator</Bundle-Activator>
+                        <Bundle-Activator>${packageName}.Activator</Bundle-Activator>
                         <Bundle-SymbolicName>${bundleName}</Bundle-SymbolicName>
                         <Bundle-Name>${bundleName}</Bundle-Name>
                     </instructions>

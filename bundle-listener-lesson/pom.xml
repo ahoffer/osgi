@@ -12,7 +12,7 @@
     <packaging>bundle</packaging>
     <properties>
         <bundleName>bundle-listener-lesson</bundleName>
-        <packageName>${bundleName}</packageName>
+        <packageName>listener</packageName>
     </properties>
     <dependencies>
         <dependency>
