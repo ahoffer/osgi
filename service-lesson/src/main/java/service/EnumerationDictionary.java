@@ -5,7 +5,7 @@ import org.osgi.framework.BundleEvent;
 
 import static org.osgi.framework.BundleEvent.*;
 
-public class EnumerationDictionaryService {
+public class EnumerationDictionary {
 
     public String lookupEvent(BundleEvent event) {
         if (event == null) {
