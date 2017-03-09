@@ -7,7 +7,9 @@ Learn the pillars of OSGi:
 * Services
   * Registering and retrieving services
   * Separating programming interfaces from implementations
+  
 ----
+
 ## Lesson 1: Bundles
 
 * [What is a bunlde?](./bundle-lesson/README.md)
