@@ -30,3 +30,19 @@ These constructs have a loose relationship to each other. If I had to draw a UML
 * Classes are .java files
 * Packages can import classes from other packages
 * Classes belong to a package
+
+
+#### How to install a the bundle
+* `bundle:install file://{bundle_folder}/filename.jar`
+* `bundle:install mnv:{group ID}/{artifact ID}/{version}`
+* Copy the JAR file to Karaf's deploy directory
+
+When a bundle is installed it is copied to a cache and is always loaded from the cache. 
+
+#### Karaf Shell Magic
+* `list`, `start`, `stop`, `refresh`
+* `bundle:watch`
+* `($.context bundle 1) location`
+* See [Karaf Scripting](https://svn.apache.org/repos/asf/karaf/site/production/manual/latest/scripting.html) for more information.
+
+#####See also [Karaf Documentation](http://supergsego.com/apache/karaf/documentation/4_x.html)
