@@ -9,12 +9,12 @@ import org.osgi.util.tracker.BundleTrackerCustomizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-class FunBundleTracker extends BundleTracker {
+class MyBundleTracker extends BundleTracker {
 
-    private static Logger logger = LoggerFactory.getLogger(FunBundleTracker.class);
+    private static Logger logger = LoggerFactory.getLogger(MyBundleTracker.class);
 
-    public FunBundleTracker(BundleContext context, int stateMask,
-                            BundleTrackerCustomizer customizer) {
+    public MyBundleTracker(BundleContext context, int stateMask,
+                           BundleTrackerCustomizer customizer) {
         super(context, stateMask, customizer);
     }
 

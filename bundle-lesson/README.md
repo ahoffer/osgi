@@ -32,16 +32,27 @@ These constructs have a loose relationship to each other. If I had to draw a UML
 * Classes belong to a package
 
 
-#### How to install a the bundle
+#### How to install a bundle
 * `bundle:install file://{bundle_folder}/filename.jar`
 * `bundle:install mnv:{group ID}/{artifact ID}/{version}`
 * Copy the JAR file to Karaf's deploy directory
 
 When a bundle is installed it is copied to a cache and is always loaded from the cache. 
 
-#### Karaf Shell Magic
+#### Preferred to install a bundle
+* Use the Maven address
+
+## Karaf Shell 
+
+#### Command Line Basics
 * `list`, `start`, `stop`, `refresh`
-* `bundle:watch`
+
+#### Updating Bundles
+* `list -u <id>` to find bundle location
+* `update <id>` to reload a bundle by its ID
+* `bundle:watch <id>` to reload bundle when  Maven  installs the artifact in the local repository
+
+#### Karaf Shell Magic
 * `($.context bundle 1) location`
 * See [Karaf Scripting](https://svn.apache.org/repos/asf/karaf/site/production/manual/latest/scripting.html) for more information.
 

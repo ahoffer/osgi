@@ -6,7 +6,7 @@ import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
 
-    private FunBundleTracker bundleTracker;
+    private MyBundleTracker bundleTracker;
 
     public void start(BundleContext context) throws Exception {
         System.out.println("Starting Bundle Tracker");
@@ -16,7 +16,7 @@ public class Activator implements BundleActivator {
                 | Bundle.INSTALLED
                 | Bundle.UNINSTALLED
                 | Bundle.ACTIVE;
-        bundleTracker = new FunBundleTracker(context, trackStates, null);
+        bundleTracker = new MyBundleTracker(context, trackStates, null);
         bundleTracker.open();
     }
 
