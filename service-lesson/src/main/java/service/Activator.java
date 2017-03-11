@@ -9,8 +9,8 @@ public class Activator implements BundleActivator {
     private ServiceRegistration<?> serviceRegistration;
 
     public void start(BundleContext context) throws Exception {
-        serviceRegistration = context.registerService(EnumerationDictionary.class,
-                new EnumerationDictionary(), null);
+        serviceRegistration = context.registerService(MyEventLookupService.class,
+                new MyEventLookupService(), null);
     }
 
     public void stop(BundleContext context) throws Exception {

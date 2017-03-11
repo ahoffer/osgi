@@ -1,20 +1,20 @@
-package listener;
+package service;
 
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleEvent;
 
 import static org.osgi.framework.BundleEvent.*;
 
-public class EnumerationDictionary {
+public class MyEventLookupService {
 
-    public static String lookupEvent(BundleEvent event) {
+    public String lookupEvent(BundleEvent event) {
         if (event == null) {
             return "null";
         }
         return lookupEvent(event.getType());
     }
 
-    public static String lookupEvent(int eventType) {
+    public String lookupEvent(int eventType) {
 
         int type = eventType;
         switch (type) {
@@ -41,11 +41,11 @@ public class EnumerationDictionary {
         }
     }
 
-    public static String lookupState(Bundle bundle) {
+    public String lookupState(Bundle bundle) {
         return lookupState(bundle.getState());
     }
 
-    private static String lookupState(int state) {
+    private String lookupState(int state) {
         switch (state) {
             case Bundle.ACTIVE:
                 return "ACTIVE";

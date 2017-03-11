@@ -16,7 +16,7 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.21</version>
         </dependency>
-        <!--We import listener (lesson/03) so we can use the EnumerationDictionary class
+        <!--We import listener (lesson/03) so we can use the EventLookupObject class
         to convert status and event codes into human-readable messages. Later, we will make this
         a proper OSGi service.-->
         <dependency>

@@ -3,7 +3,7 @@ package api;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleEvent;
 
-public interface EnumerationDictionaryService {
+public interface MyEventLookupService {
 
     String lookupEvent(int eventType);
 

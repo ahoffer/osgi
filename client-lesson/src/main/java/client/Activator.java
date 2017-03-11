@@ -4,7 +4,7 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleEvent;
 import org.osgi.framework.ServiceReference;
-import service.EnumerationDictionary;
+import service.MyEventLookupService;
 
 public class Activator implements BundleActivator {
     public void start(BundleContext context) throws Exception {
@@ -16,9 +16,9 @@ public class Activator implements BundleActivator {
         // Once you have the reference, you can use the framework to get the objects taht provider
         // the service.
         ServiceReference serviceReference =
-                context.getServiceReference(EnumerationDictionary.class);
-        EnumerationDictionary provider =
-                (EnumerationDictionary) context.getService(serviceReference);
+                context.getServiceReference(MyEventLookupService.class);
+        MyEventLookupService provider =
+                (MyEventLookupService) context.getService(serviceReference);
 
 
         System.out.println(provider.lookupEvent(BundleEvent.RESOLVED));

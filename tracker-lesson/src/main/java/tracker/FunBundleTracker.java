@@ -1,6 +1,6 @@
 package tracker;
 
-import listener.EnumerationDictionary;
+import listener.EventLookupObject;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleEvent;
@@ -38,8 +38,8 @@ class FunBundleTracker extends BundleTracker {
 
     private void print(String methodName, Bundle bundle, BundleEvent event) {
         String symbolicName = bundle.getSymbolicName();
-        String stateName = EnumerationDictionary.lookupState(bundle);
-        String eventName = EnumerationDictionary.lookupEvent(event);
+        String stateName = EventLookupObject.lookupState(bundle);
+        String eventName = EventLookupObject.lookupEvent(event);
         logger.info("{}(bundle={}, state={}, event={})",
                 methodName,
                 symbolicName,

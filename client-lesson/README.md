@@ -1,7 +1,7 @@
 #### Karaf Shell Magic
 * `services`
 *  Invoke a service from the shell 
-   * `_sref = $.context getServiceReference "service.EnumerationDictionary"`
+   * `_sref = $.context getServiceReference "service.MyEventLookupService"`
    * `_srv = $.context getService $_sref`
    * `echo $_srv`
    * `$_srv lookupEvent 128`

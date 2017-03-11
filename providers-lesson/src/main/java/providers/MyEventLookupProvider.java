@@ -1,11 +1,12 @@
-package service;
+package providers;
 
+import api.MyEventLookupService;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleEvent;
 
 import static org.osgi.framework.BundleEvent.*;
 
-public class EnumerationDictionary {
+public class MyEventLookupProvider implements MyEventLookupService {
 
     public String lookupEvent(BundleEvent event) {
         if (event == null) {
@@ -16,8 +17,7 @@ public class EnumerationDictionary {
 
     public String lookupEvent(int eventType) {
 
-        int type = eventType;
-        switch (type) {
+        switch (eventType) {
             case INSTALLED:
                 return "INSTALLED";
             case LAZY_ACTIVATION:
@@ -37,7 +37,7 @@ public class EnumerationDictionary {
             case UPDATED:
                 return "UPDATED";
             default:
-                return "unknown event type: " + type;
+                return String.valueOf(eventType);
         }
     }
 
@@ -45,7 +45,7 @@ public class EnumerationDictionary {
         return lookupState(bundle.getState());
     }
 
-    private String lookupState(int state) {
+    public String lookupState(int state) {
         switch (state) {
             case Bundle.ACTIVE:
                 return "ACTIVE";
