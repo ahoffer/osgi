@@ -10,11 +10,6 @@ public class Activator implements BundleActivator {
 
     public void start(BundleContext context) throws Exception {
 
-        /* How to generate a runtime error:
-           If MyEventLookupService does not implement EnumerationDictionaryInterface, you
-           can cast the instance of ...service to ...interface and it will compile fine. But it
-           will throw a runtime error that the cast is invalid.
-        */
         serviceRegistration = context.registerService(MyEventLookupService.class,
                 new MyEventLookupProvider(), null);
     }

@@ -25,14 +25,14 @@ public class Activator implements BundleActivator, BundleListener {
  */
 
     public void start(BundleContext context) throws Exception {
-        System.out.println("FunListener start()");
-        logger.warn("FunListener register");
+        System.out.println("Activator start() method");
+        logger.warn("Adding bundle listener register");
         context.addBundleListener(this);
     }
 
     public void stop(BundleContext context) throws Exception {
-        System.out.println("FunListener stop()");
-        logger.warn("FunListener unregister");
+        System.out.println("Activator stop()");
+        logger.warn("Removing bundle listener");
         context.removeBundleListener(this);
     }
 
