@@ -12,7 +12,7 @@ Learn the pillars of OSGi:
 
 ## Lesson 1: Bundles
 
-* [What is a bunlde?](./bundle-lesson/README.md)
+* [What is a bundle?](./bundle-lesson/README.md)
 * Modularity and Life Cycle
 * Create a bundle 
   * Activator class
