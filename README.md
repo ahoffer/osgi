@@ -12,14 +12,13 @@ Learn the pillars of OSGi:
 
 ## Lesson 1: Bundles
 
-* [What is a bundle?](./bundle-lesson/README.md)
 * Modularity and Life Cycle
 * Create a bundle 
   * Activator class
   * Bundle Context
   * Maven Bundle Plugin
 * Install a bundle
-* Start, stop, resolve, refresh, update a bundle
+* Start, stop, resolve a bundle
 
 ## Lesson 2: Add a Logger
 * Add logging interface as dependency

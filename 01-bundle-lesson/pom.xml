@@ -8,12 +8,8 @@
         <version>0.1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>01</artifactId>
-    <properties>
-        <bundleName>bundle-lesson</bundleName>
-        <packageName>bundle</packageName>
-    </properties>
-    <!--The packaging directive tells maven to make a bundle and not a jar. AFAIK, that means
+    <artifactId>01-bundle-lesson</artifactId>
+    <!--The packaging directive tells maven to make a bundle and not a jar. That means
      adding OSGi headers to the to META-INF/MANIFEST.MF file, and including the blueprint file
       in the OSGI-INF/bluprint directory. -->
     <packaging>bundle</packaging>
@@ -28,17 +24,11 @@
                 <configuration>
                     <!-- This section lets you add OSGi headers to the MANIFEST.MF
                     We add a header to tell OSGi there is an Activator class. We use the
-                    use the Activator to print messages just to test stopping and
+                    use MyActivator to print messages just to test stopping and
                     starting bundles. -->
                     <instructions>
-                        <!--Bundle-Activator is the full class name (e.g. org.foo.bar.Activator).
-                        It is packagename.ClassName. I use the same name for the package and the
-                        bundle, so bundlename.Activator is the same as packagename.Activator.-->
-                        <Bundle-Activator>${packageName}.Activator</Bundle-Activator>
-                        <Bundle-SymbolicName>${bundleName}</Bundle-SymbolicName>
-                        <!--If Bundle-Name is not set, BND (Maven bundle plugin) will use
-                         the maven artifact ID as the Bundle-Name. -->
-                        <Bundle-Name>${bundleName}</Bundle-Name></instructions>
+                        <Bundle-Activator>bundle.MyActivator</Bundle-Activator>
+                    </instructions>
                 </configuration>
             </plugin>
         </plugins>
