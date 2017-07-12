@@ -5,6 +5,9 @@
 2. `bundle:install file:/{bundle_folder}/{filename}`
 3. (Copy the JAR file to Karaf's `deploy` directory)
 
+- Preferred method installation is with the maven address
+- When a bundle is installed it is copied to a cache and is always loaded from the cache. 
+
 #### Common bundle commands
 * `bundle:install <mavenUrls>`
     * Installs a list of bundles into karaf
@@ -22,9 +25,6 @@
     * `--stop` to stop the specified bundles
     * `--remove` to remove the specified bundles
     * `--list` to show the currently watched bundles
-
-- Preferred method installation is with the maven address
-- When a bundle is installed it is copied to a cache and is always loaded from the cache. 
 
 #### Updating Bundles
 * `list -u <id>` to find bundle location
