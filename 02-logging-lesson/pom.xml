@@ -8,8 +8,12 @@
         <version>0.1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>07</artifactId>
+    <artifactId>02-logging-lesson</artifactId>
+    <!--The packaging directive tells maven to make a bundle and not a jar. That means
+     adding OSGi headers to the to META-INF/MANIFEST.MF file, and including the blueprint file
+      in the OSGI-ING/bluprint directory. -->
     <packaging>bundle</packaging>
+    <!--Every POM file that builds a bundle needs to include the bundle plugin. -->
     <dependencies>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -22,9 +26,6 @@
             <version>6.0.0</version>
         </dependency>
     </dependencies>
-    <properties>
-        <bundleName>api-lesson</bundleName>
-    </properties>
     <build>
         <plugins>
             <plugin>
@@ -32,6 +33,11 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <version>3.2.0</version>
                 <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-Activator>org.foo.MyActivator</Bundle-Activator>
+                    </instructions>
+                </configuration>
             </plugin>
         </plugins>
     </build>

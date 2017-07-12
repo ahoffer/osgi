@@ -1,6 +1,5 @@
 ## Karaf Shell Commands
 
-
 #### How to install a bundle
 1. `bundle:install mnv:{group ID}/{artifact ID}/{version}`
 2. `bundle:install file:/{bundle_folder}/{filename}`
@@ -32,9 +31,6 @@
 * `update <id>` to reload a bundle by its ID
 * `bundle:watch <id>` to reload bundle when  Maven  installs the artifact in the local repository
 
-##### See also [Karaf Documentation](http://supergsego.com/apache/karaf/documentation/4_x.html)
+##### See  [Karaf Documentation](http://supergsego.com/apache/karaf/documentation/4_x.html)
 
-----
-Appendix: Karaf Shell Magic
-* `($.context bundle 1) location`
-* See [Karaf Scripting](https://svn.apache.org/repos/asf/karaf/site/production/manual/latest/scripting.html) for more information.
+##### See [Karaf Scripting](https://svn.apache.org/repos/asf/karaf/site/production/manual/latest/scripting.html) 

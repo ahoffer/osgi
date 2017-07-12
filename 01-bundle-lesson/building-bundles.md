@@ -36,7 +36,7 @@
  ```xml
 <configuration>
     <instructions>
-      <Bundle-Activator>bundle.MyActivator</Bundle-Activator>
+      <Bundle-Activator>MyActivator</Bundle-Activator>
     </instructions>
 </configuration>
 ```

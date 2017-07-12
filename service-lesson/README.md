@@ -1,2 +1,0 @@
-#### Karaf Shell Magic
-* `services`

@@ -27,10 +27,17 @@
                     use MyActivator to print messages just to test stopping and
                     starting bundles. -->
                     <instructions>
-                        <Bundle-Activator>bundle.MyActivator</Bundle-Activator>
+                        <Bundle-Activator>org.foo.MyActivator</Bundle-Activator>
                     </instructions>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>6.0.0</version>
+        </dependency>
+    </dependencies>
 </project>

@@ -8,7 +8,7 @@
         <version>0.1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>07</artifactId>
+    <artifactId>08</artifactId>
     <packaging>bundle</packaging>
     <dependencies>
         <dependency>
@@ -17,13 +17,14 @@
             <version>1.7.21</version>
         </dependency>
         <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>6.0.0</version>
+            <groupId>lesson</groupId>
+            <artifactId>07</artifactId>
+            <version>0.1.0</version>
         </dependency>
     </dependencies>
     <properties>
-        <bundleName>api-lesson</bundleName>
+        <bundleName>providers-lesson</bundleName>
+        <packageName>providers</packageName>
     </properties>
     <build>
         <plugins>
@@ -32,7 +33,13 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <version>3.2.0</version>
                 <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-Activator>${packageName}.Activator</Bundle-Activator>
+                    </instructions>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>
