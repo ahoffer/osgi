@@ -5,7 +5,7 @@
 2. `bundle:install file:/{bundle_folder}/{filename}`
 3. (Copy the JAR file to Karaf's `deploy` directory)
 
-- Preferred method installation is with the maven address
+- Preferred method installation is with the maven address because you can use `bundle:watch` to update the bundle (see below).
 - When a bundle is installed it is copied to a cache and is always loaded from the cache. 
 
 #### Common bundle commands
@@ -19,12 +19,14 @@
     * Can specify where to get the updated bundle from
 * `bundle:headers <ids>`
     * Displays detailed OSGI information of given bundles. Such as when they import/export and whether or not they are satisfied
-* `bundle:watch <ids>|<mavenUrls>`
+* `bundle:watch --start <ids>|<mavenUrls>`
     * Watches for updates to the specified bundles and automatically updates them
-    * Add `--start` to start watching the specified bundles.
+    * `--start` to start watching the specified bundles.
     * `--stop` to stop the specified bundles
     * `--remove` to remove the specified bundles
     * `--list` to show the currently watched bundles
+
+**WARNING** `bundle:watch can be flaky. It can stop working without warning. However, dropped a bundle file into the `deploy` directory always replaces the existing bundle with the new bundle.
 
 #### Updating Bundles
 * `list -u <id>` to find bundle location
