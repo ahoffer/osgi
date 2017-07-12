@@ -1,5 +1,5 @@
 # Leson 05 - Creating a service
-We will create a service that breaks a number into its prime factors.
+We will create a service that breaks a number into its prime factors. We will use an Apache math library to do the work. But we will expose the library as an OSGi service.
 
 ### Step 1 - OSGi services
 [Read about what "service" means in OSGi](services.md).
@@ -79,3 +79,9 @@ This returns a bundle context of the root bundle, bundle 0.
        
         $factorizer getFactors 42
         
+### Take Away
+The OSGi model is simple, once you get used to it. Getting it to work is another matter. Bundles can be started and stopped while the application is running. Accounting for your imports, exports, dependencies, what to embed, as well as their scope or exclusions is hard. The compiler can't help you and IntelliJ doesn't help you. The maven bundle plugin makes it less tedious.
+ 
+When things don't work, you get messages about what is wrong. The more intimate you are with the details of how OSGi works, the more useful the messages. 
+
+If you are used to your Java code compiling and "just working", you might be initially frustrated with OSGi because. OSGi turns your runtime Java into something more fluid like Ruby or JavaScript.

@@ -1,12 +1,11 @@
-package client;
+package org.bar;
 
 import org.foo.Factorizer;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.BundleEvent;
 import org.osgi.framework.ServiceReference;
 
-public class Activator implements BundleActivator {
+public class MyServiceConsumer implements BundleActivator {
     public void start(BundleContext context) throws Exception {
         //The point of this lesson is how to get a service reference (interface) and then, given the
         // reference, find an object that provides the services.
@@ -16,10 +15,8 @@ public class Activator implements BundleActivator {
         // Once you have the reference, you can use the framework to get the objects that provide
         // the service.
         ServiceReference serviceReference = context.getServiceReference(Factorizer.class);
-        Factorizer provider = (Factorizer) context.getService(serviceReference);
-
-
-        System.out.println(provider.lookupEvent(BundleEvent.RESOLVED));
+        Factorizer factorizer = (Factorizer) context.getService(serviceReference);
+        System.out.println(factorizer.getFactors(105));
     }
 
     public void stop(BundleContext context) throws Exception {

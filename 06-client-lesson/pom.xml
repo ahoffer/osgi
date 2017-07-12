@@ -36,7 +36,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-Activator>org.foo.MyActivator</Bundle-Activator>
+                        <Bundle-Activator>org.bar.MyServiceConsumer</Bundle-Activator>
                     </instructions>
                 </configuration>
             </plugin>

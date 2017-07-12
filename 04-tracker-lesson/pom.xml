@@ -18,7 +18,7 @@
         a proper OSGi service.-->
         <dependency>
             <groupId>lesson</groupId>
-            <artifactId>03</artifactId>
+            <artifactId>03-bundle-listener-lesson</artifactId>
             <version>0.1.0</version>
         </dependency>
         <dependency>
@@ -36,7 +36,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-Activator>${packageName}.Activator</Bundle-Activator>
+                        <Bundle-Activator>tracker.Activator</Bundle-Activator>
                     </instructions>
                 </configuration>
             </plugin>

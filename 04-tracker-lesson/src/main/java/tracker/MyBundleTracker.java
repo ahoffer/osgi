@@ -8,8 +8,6 @@ import org.osgi.util.tracker.BundleTrackerCustomizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import listener.EventLookupObject;
-
 class MyBundleTracker extends BundleTracker {
 
     private static Logger logger = LoggerFactory.getLogger(MyBundleTracker.class);
@@ -38,13 +36,13 @@ class MyBundleTracker extends BundleTracker {
     }
 
     private void print(String methodName, Bundle bundle, BundleEvent event) {
-        String symbolicName = bundle.getSymbolicName();
-        String stateName = EventLookupObject.lookupState(bundle);
-        String eventName = EventLookupObject.lookupEvent(event);
-        logger.info("{}(bundle={}, state={}, event={})",
-                methodName,
-                symbolicName,
-                stateName,
-                eventName);
+        //        String symbolicName = bundle.getSymbolicName();
+        //        String stateName = EventLookupObject.lookupState(bundle);
+        //        String eventName = EventLookupObject.lookupEvent(event);
+        //        logger.info("{}(bundle={}, state={}, event={})",
+        //                methodName,
+        //                symbolicName,
+        //                stateName,
+        //                eventName);
     }
 }

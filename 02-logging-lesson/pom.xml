@@ -35,7 +35,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-Activator>org.foo.MyActivator</Bundle-Activator>
+                        <Bundle-Activator>org.foo.LoggingActivator</Bundle-Activator>
                     </instructions>
                 </configuration>
             </plugin>

@@ -27,7 +27,7 @@
                     use MyActivator to print messages just to test stopping and
                     starting bundles. -->
                     <instructions>
-                        <Bundle-Activator>org.foo.MyActivator</Bundle-Activator>
+                        <Bundle-Activator>org.foo.FirstActivator</Bundle-Activator>
                     </instructions>
                 </configuration>
             </plugin>
