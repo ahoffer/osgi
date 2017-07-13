@@ -1,7 +1,7 @@
 ## Karaf Shell Commands
 
 #### How to install a bundle
-1. `bundle:install mnv:{group ID}/{artifact ID}/{version}`
+1. `bundle:install mvn:{group ID}/{artifact ID}/{version}`
 2. `bundle:install file:/{bundle_folder}/{filename}`
 3. (Copy the JAR file to Karaf's `deploy` directory)
 
