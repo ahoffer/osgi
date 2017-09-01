@@ -26,8 +26,6 @@
     * `--remove` to remove the specified bundles
     * `--list` to show the currently watched bundles
 
-**WARNING** `bundle:watch` can be flaky. It can stop working without warning. However, dropping a bundle file into the `deploy` directory always replaces the existing bundle with the new bundle.
-
 #### Updating Bundles
 * `list -u <id>` to find bundle location
 * `update <id>` to reload a bundle by its ID
