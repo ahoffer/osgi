@@ -34,3 +34,26 @@
 ##### See  [Karaf Documentation](http://supergsego.com/apache/karaf/documentation/4_x.html)
 
 ##### See [Karaf Scripting](https://svn.apache.org/repos/asf/karaf/site/production/manual/latest/scripting.html) 
+
+#### Felix Shell Tricks
+
+##### Variables
+* Set a varaible `foo=3.14`
+* Get a variable `$foo`
+* Special ("dot") variables
+  * $.context to access a bundle context (instance of `BundleContextImpl` for system bundle)
+  * $.variables to access the list of defined variables
+  * $.commands to access the list of defined command
+  
+##### Java code
+You can sorta execute Java code. I've played with it an these seems to be the rules:
+ - The format is `object method arg1 ag2` ...
+ - Define a varible to hold the return value of `method`
+ - For example, get all references for a particular service, first get the context, send it the `getServiceReferences` message, and pass the parameters: `$.context getServiceReferences com.github.ahoffer.imageresize.api.ImageResizer null`
+ - If you want to send a method to a return object, group with parenthesis: `($.context getBundle 139) getLocation`
+ 
+ Putting it all together. Get the first `ImageResizer` service provider, send it the message `recommendedFor` and pass it the parameter `"JPEG"`:
+ 
+ `service_ref = $.context getServiceReference com.github.ahoffer.imageresize.api.ImageResizer`
+ `($.context getService $service_ref) recommendedFor JPEG`
+ 
