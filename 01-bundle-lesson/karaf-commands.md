@@ -55,5 +55,6 @@ You can sorta execute Java code. I've played with it an these seems to be the ru
  Putting it all together. Get the first `ImageResizer` service provider, send it the message `recommendedFor` and pass it the parameter `"JPEG"`:
  
  `service_ref = $.context getServiceReference com.github.ahoffer.imageresize.api.ImageResizer`
+ 
  `($.context getService $service_ref) recommendedFor JPEG`
  
