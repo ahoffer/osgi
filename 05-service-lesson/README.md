@@ -84,7 +84,7 @@ This returns a bundle context of the root bundle, bundle 0.
        
 5. Create a variable to hold the Factorizer object
 
-       $factorizer=$.context getService $sref
+       factorizer=$.context getService $sref
        
 6. Use the Factorizer to factor a number:
        
