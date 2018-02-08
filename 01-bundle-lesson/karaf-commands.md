@@ -39,7 +39,7 @@
 #### Felix Shell Tricks
 
 ##### Variables
-* Set a varaible `foo=3.14`
+* Set a variable `foo=3.14`
 * Get a variable `$foo`
 * Special ("dot") variables
   * $.context to access a bundle context (instance of `BundleContextImpl` for system bundle)
