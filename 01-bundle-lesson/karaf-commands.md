@@ -30,7 +30,7 @@
     * `--stop` to stop the specified bundles
     * `--remove` to remove the specified bundles
     * `--list` to show the currently watched bundles
-* `bundle:watch --start *` to watch and update _all_bundles
+* `bundle:watch --start *` to watch and update *all* bundles
 
 ##### See  [Karaf Documentation](http://supergsego.com/apache/karaf/documentation/4_x.html)
 
