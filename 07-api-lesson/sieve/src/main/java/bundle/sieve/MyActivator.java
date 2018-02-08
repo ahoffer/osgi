@@ -1,15 +1,16 @@
-package org.foo;
+package bundle.sieve;
 
+import bundle.api.Factorizer;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 
-public class MyServiceRegistration implements BundleActivator {
+public class MyActivator implements BundleActivator {
 
   private ServiceRegistration<?> serviceRegistration;
 
   public void start(BundleContext context) {
-    serviceRegistration = context.registerService(Factorizer.class, new Factorizer(), null);
+    serviceRegistration = context.registerService(Factorizer.class, new SieveProvider(), null);
   }
 
   public void stop(BundleContext context) {
