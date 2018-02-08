@@ -15,6 +15,11 @@
     <packaging>bundle</packaging>
     <!--Every POM file that builds a bundle needs to include the bundle plugin. -->
     <dependencies>
+             
+         <!--Notice that the artifacId has the term "API" in it. This usually indicates
+          the dependencies ONLY defines interfaces and does not have an actual implementation.
+          Karaf provides a logging implementation for the skf4j API. When the bundle starts,
+          the bundle automatically use the implementation provided by Karaf. -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
