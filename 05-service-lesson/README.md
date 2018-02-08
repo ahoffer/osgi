@@ -5,7 +5,7 @@ We will create a service that breaks a number into its prime factors. We will us
 [Read about what "service" means in OSGi](services.md).
 
 ### Step 2 - Create a Service class
-- Create a class with a single public method:
+- Create a class (I called mine `Factorizer`) with a single public method :
 
 `public List<Integer> getFactors(Integer number)`
 
