@@ -2,7 +2,9 @@
 
 ### Step 01 - Set up
 - Create a new module, package, and a subclass of `BundleActivator`. 
-- Set up the POM to build the package as a bundle.
+- 
+- Set up the POM to build the package as a bundle `<packaging>bundle</packaging>`
+- Add a dependency to your factorization artifact.
 
 ### Step 02 - Add code
 - Go to your subclass of `BundleActivator` and edit the `start()` method. 
