@@ -18,7 +18,8 @@
 
 ### Step 5 - Configure maven bundle plugin
 - [Learn about the bundle manifest and the maven bundle plugin](building-bundles.md) 
-- Configure the maven bundle plugin in the POM file. Among other things, this will add a dependency on the OSGi core interfaces.
+- Configure the maven bundle plugin in the POM file.
+- Add the `Bundle-Activator` configuration to register the activator class.
 
 ### Step 6 - Build your bundle
 - Use maven to install the project
