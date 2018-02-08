@@ -26,6 +26,8 @@ Don't worry about the body of the method. That comes later.
 ### Step 5 - Register the service
 - Implement the `start()` and `stop()` to register and unregister the service.
 ```
+private ServiceRegistration<?> serviceRegistration;
+    
  public void start(BundleContext context) throws Exception {
         serviceRegistration = context.registerService(Factorizer.class, new Factorizer(), null);
     }
