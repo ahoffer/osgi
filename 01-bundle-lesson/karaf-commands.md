@@ -19,17 +19,18 @@
     * Can specify where to get the updated bundle from
 * `bundle:headers <ids>`
     * Displays detailed OSGI information of given bundles. Such as when they import/export and whether or not they are satisfied
+
+
+#### Updating Bundles
+* `list -u <id>` to find bundle location
+* `update <id>` to reload a bundle by its ID
 * `bundle:watch --start <ids>|<mavenUrls>`
     * Watches for updates to the specified bundles and automatically updates them
     * `--start` to start watching the specified bundles.
     * `--stop` to stop the specified bundles
     * `--remove` to remove the specified bundles
     * `--list` to show the currently watched bundles
-
-#### Updating Bundles
-* `list -u <id>` to find bundle location
-* `update <id>` to reload a bundle by its ID
-* `bundle:watch <id>` to reload bundle when  Maven  installs the artifact in the local repository
+* `bundle:watch --start *` to watch and update _all_bundles
 
 ##### See  [Karaf Documentation](http://supergsego.com/apache/karaf/documentation/4_x.html)
 
