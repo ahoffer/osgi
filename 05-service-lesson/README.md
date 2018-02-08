@@ -24,7 +24,16 @@ Don't worry about the body of the method. That comes later.
 - Use the `Primes.primeFactors` method to do the factorization.
 
 ### Step 5 - Register the service
-- Look at the activator class in this module. Implement the `start()` and `stop()` to register and unregister the service.
+- Implement the `start()` and `stop()` to register and unregister the service.
+```
+ public void start(BundleContext context) throws Exception {
+        serviceRegistration = context.registerService(Factorizer.class, new Factorizer(), null);
+    }
+
+    public void stop(BundleContext context) throws Exception {
+        serviceRegistration.unregister();
+    }
+```
 
 ### Step 6 - Build and install the bundle
 - Build, install and start the bundle.
