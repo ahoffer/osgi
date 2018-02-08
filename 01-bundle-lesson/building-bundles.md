@@ -6,9 +6,7 @@
 ### Add the maven-bundle-plugin to the list of plugins
 ```xml
 <build>
-    ...
     <plugins>
-        ...
         <plugin>
             <groupId>org.apache.felix</groupId>
             <artifactId>maven-bundle-plugin</artifactId>
