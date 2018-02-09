@@ -1,17 +1,17 @@
-package bundle.sieve;
+package trial;
 
 import api.Factorizer;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
-import sieve.SieveProvider;
 
 public class MyActivator implements BundleActivator {
 
   private ServiceRegistration<?> serviceRegistration;
 
   public void start(BundleContext context) {
-    serviceRegistration = context.registerService(Factorizer.class, new SieveProvider(), null);
+    serviceRegistration =
+        context.registerService(Factorizer.class, new TrialDivisionProvider(), null);
   }
 
   public void stop(BundleContext context) {

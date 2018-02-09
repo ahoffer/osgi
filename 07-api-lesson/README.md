@@ -21,7 +21,7 @@ Then, we will create a second service provider that factors number using a diffe
 <version>1.0-SNAPSHOT</version>
 ```
  
- * Add this Java interface:
+* Add this Java interface:
  
  ```java
  package api;
@@ -50,7 +50,9 @@ Then, we will create a second service provider that factors number using a diffe
 <version>1.0-SNAPSHOT</version>
 ```
 
-### Step 7 - Create the service provider and the activator
+### Step 7 - Create `trial` service provider and activator
+ * Up for a challenge? Try to writer the service provider class (`TrialDivisionProvider`) 
+ yourself. Otherwise, copy the code from 
 
 ### Step 8 - Fix up the POM file
  * Add the dependencies for `osgi.core` and the Apache math library
@@ -58,13 +60,16 @@ Then, we will create a second service provider that factors number using a diffe
  * Add the maven bundle plugin
    * Add the instruction to use your activator class
    * Embed the Apache math library
-   
+      
 ### Step 9 - Build, install, and test the `trial` service provider
+`(service:get api.Factorizer) getFactors 42`
 
 ### Step 10 - Create the `sieve` module
 
-### Step 11 - Build install and test the `sieve` service provider
-`sieve=$.context getServiceReferences bundle.api.Factorizer "(service.id=94)"`
+### Step 11 - Build, install, and test the `sieve` service provider
+`sieve=$.context getServiceReferences api.Factorizer "(service.id=94)"`
+
+
 ### Take Away
 - A service is defined by a **Java interface**. An implementer of a service interface is called a 
 service provider. Often it is just referred to as an **Impl**.

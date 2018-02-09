@@ -6,38 +6,21 @@ import java.util.List;
 
 /**
  * Code for factorization taken from
- * https://introcs.cs.princeton.edu/java/14array/PrimeSieve.java.html
+ * http://www.vogella.com/tutorials/JavaAlgorithmsPrimeFactorization/article.html
  */
 public class SieveProvider implements Factorizer {
 
+  @Override
   public List<Integer> getFactors(Integer number) {
+
     int n = number;
-    List<Integer> primes = new ArrayList<>();
-    // initially assume all integers are prime
-    boolean[] isPrime = new boolean[n + 1];
+    List<Integer> factors = new ArrayList<>();
     for (int i = 2; i <= n; i++) {
-      isPrime[i] = true;
-    }
-
-    // mark non-primes <= n using Sieve of Eratosthenes
-    for (int factor = 2; factor * factor <= n; factor++) {
-
-      // if factor is prime, then mark multiples of factor as non-prime
-      // suffices to consider multiples factor, factor+1, ...,  n/factor
-      if (isPrime[factor]) {
-        for (int j = factor; factor * j <= n; j++) {
-          isPrime[factor * j] = false;
-        }
+      while (n % i == 0) {
+        factors.add(i);
+        n /= i;
       }
     }
-
-    // store primes
-    for (int i = 2; i <= n; i++) {
-      if (isPrime[i]) {
-        primes.add(i);
-      }
-    }
-
-    return primes;
+    return factors;
   }
 }
