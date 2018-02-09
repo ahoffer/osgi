@@ -3,8 +3,41 @@
 
 From the preview of the book "OSGi in Practice" by Neil Bartlett
 
-#### Take Away
-- A service is defined by a **Java interface**. An implementer of a service interface is called a service provider. Often it is just referred to as an "impl".
-- Services are published by the OSGi runtime. 
-- You look-up a service provider object by the interface it implements.
-- It is outside the scope of this tutorial, but services providers can be registered with additional properties. You can filter on these properties to get a particular service provider.
+In practice, the word "service" is used ambiguously. The most correct use of "service" is the 
+definition of a contract:
+
+*"If you invoke me with certain input, I promise to perform some work and return this output 
+back to you."*
+
+Java has a strong support for these kind of contracts. Java uses **interfaces** to define contracts.
+An interface has a name and a collection of method signatures. The method signatures are like
+the terms of the contract. The signatures define the name, the parameters and the return value of
+a public method.
+
+More generally, these kinds of contracts are called **Application Programming Interfaces** or 
+**API**s. API is a general terms that could refer any informatics contract. For example:
+* C/C++ header file
+* Java interface 
+* SOAP web service WSDL (an XML file that specifies the contract)
+* REST web service's response to different HTTP requests
+
+However, a contract by itself does nothing. The functionality defined by an interface must to be 
+implemented somewhere. In fact, it can be implemented many times. And this is the other ambiguous
+use of the word "service"-- the code that implements an API. To disambiguate the two uses
+of "service", The letters **Impl** are sometimes added to the name of the end of a class name
+to indicate it implements a service. Here is an example:
+
+`public class BrandingRegistryImpl implements BrandingRegistry`
+
+
+I prefer calling implementations **Providers**. My examples look like:
+
+`public class SieveProvider implements Factorizer`
+
+----
+
+
+### Whiteboard Pattern
+Want to geek-out? Read: https://www.osgi.org/wp-content/uploads/whiteboard1.pdf. Then explain 
+it to me because I haven't taken the time to figure it all out. Although, I think a more idiomatic
+term might be "pin board" and not "white board". Read it and tell me what you think.

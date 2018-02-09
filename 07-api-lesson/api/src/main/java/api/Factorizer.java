@@ -1,4 +1,4 @@
-package bundle.api;
+package api;
 
 import java.util.List;
 

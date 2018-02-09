@@ -1,6 +1,6 @@
-package bundle.trial;
+package trial;
 
-import bundle.api.Factorizer;
+import api.Factorizer;
 import java.util.List;
 import org.apache.commons.math3.primes.Primes;
 

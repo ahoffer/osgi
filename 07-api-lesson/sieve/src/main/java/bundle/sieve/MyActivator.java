@@ -1,9 +1,10 @@
 package bundle.sieve;
 
-import bundle.api.Factorizer;
+import api.Factorizer;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
+import sieve.SieveProvider;
 
 public class MyActivator implements BundleActivator {
 

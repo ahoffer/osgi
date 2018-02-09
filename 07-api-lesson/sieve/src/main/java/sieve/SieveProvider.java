@@ -1,11 +1,12 @@
-package bundle.sieve;
+package sieve;
 
-import bundle.api.Factorizer;
+import api.Factorizer;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Code for prime number sieve taken from https://introcs.cs.princeton.edu/java/14array/PrimeSieve.java.html
+ * Code for factorization taken from
+ * https://introcs.cs.princeton.edu/java/14array/PrimeSieve.java.html
  */
 public class SieveProvider implements Factorizer {
 
@@ -21,8 +22,8 @@ public class SieveProvider implements Factorizer {
     // mark non-primes <= n using Sieve of Eratosthenes
     for (int factor = 2; factor * factor <= n; factor++) {
 
-      // if factor is prime, then mark multiples of factor as nonprime
-      // suffices to consider mutiples factor, factor+1, ...,  n/factor
+      // if factor is prime, then mark multiples of factor as non-prime
+      // suffices to consider multiples factor, factor+1, ...,  n/factor
       if (isPrime[factor]) {
         for (int j = factor; factor * j <= n; j++) {
           isPrime[factor * j] = false;
@@ -30,7 +31,7 @@ public class SieveProvider implements Factorizer {
       }
     }
 
-    // count primes
+    // store primes
     for (int i = 2; i <= n; i++) {
       if (isPrime[i]) {
         primes.add(i);

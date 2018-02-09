@@ -41,7 +41,7 @@ private ServiceRegistration<?> serviceRegistration;
 - Build, install and start the bundle.
 - Unless you did some extra work, you get an error trying to start the bundle. My error looked like this:
 >Error executing command: Error executing command on bundles:
-   	Error starting bundle 56: Unable to resolve lesson.05-service-lession [56](R 56.0): missing requirement [lesson.05-service-lession [56](R 56.0)] osgi.wiring.package; (&(osgi.wiring.package=org.apache.commons.math3.primes)(version>=3.6.0)(!(version>=4.0.0))) Unresolved requirements: [[lesson.05-service-lession [56](R 56.0)] osgi.wiring.package; (&(osgi.wiring.package=org.apache.commons.math3.primes)(version>=3.6.0)(!(version>=4.0.0)))]
+   	Error starting bundle 56: Unable to resolve lesson.05-service-lesson [56](R 56.0): missing requirement [lesson.05-service-lession [56](R 56.0)] osgi.wiring.package; (&(osgi.wiring.package=org.apache.commons.math3.primes)(version>=3.6.0)(!(version>=4.0.0))) Unresolved requirements: [[lesson.05-service-lession [56](R 56.0)] osgi.wiring.package; (&(osgi.wiring.package=org.apache.commons.math3.primes)(version>=3.6.0)(!(version>=4.0.0)))]
 
 - Nice and cryptic! It's telling us it cannot find `org.apache.commons.math3.primes`
 - **HINT:** use the `headers` and `diag` commands to get better information. Try them now.
@@ -91,8 +91,13 @@ This returns a bundle context of the root bundle, bundle 0.
         $factorizer getFactors 42
         
 ### Take Away
-The OSGi model is simple, once you get used to it. Getting it to work is another matter. Bundles can be started and stopped while the application is running. Accounting for your imports, exports, dependencies, what to embed, as well as their scope or exclusions is hard. The compiler can't help you and IntelliJ doesn't help you. The maven bundle plugin makes it less tedious.
+The OSGi model is simple, in theory. Getting it to work is another matter. Bundles can be started 
+and stopped while the application is running. Accounting for your imports, exports, dependencies,
+ what to embed, as well as their scope or exclusions is hard. The compiler can't help you and 
+ IntelliJ doesn't help you. The maven bundle plugin makes it less tedious.
  
-When things don't work, you get messages about what is wrong. The more intimate you are with the details of how OSGi works, the more useful the messages. 
+When things don't work, you get messages about what is wrong. The more intimate you are with 
+the details of how OSGi works, the more useful the messages. 
 
-If you are used to your Java code compiling and "just working", you might be initially frustrated with OSGi because. OSGi turns your runtime Java into something more fluid like Ruby or JavaScript.
+If you are used to your Java code compiling and "just working", you might be initially frustrated 
+with OSGi because. OSGi turns your runtime Java into something more fluid like Ruby or JavaScript.
