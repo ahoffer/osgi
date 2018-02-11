@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+  xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+
+  <!--Create a new instance of a class. Give it an ID so we can refer to it later. The "container" -->
+  <!--keeps track of the new object and its ID-->
+  <bean class="blueprintlesson.TrialDivisionProvider" id="trial"/>
+
+
+  <!--Register the bean as providing an OSGi service that conforms to the interface api.Factorizer-->
+  <service id="trialService" interface="api.Factorizer" ref="trial"/>
+
+
+</blueprint>

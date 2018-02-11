@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>lesson</groupId>
-  <artifactId>trial</artifactId>
+  <artifactId>blueprint</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <packaging>bundle</packaging>
@@ -21,11 +21,6 @@
       <artifactId>commons-math3</artifactId>
       <version>3.4.1</version>
     </dependency>
-    <dependency>
-      <groupId>org.osgi</groupId>
-      <artifactId>org.osgi.core</artifactId>
-      <version>6.0.0</version>
-    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -38,7 +33,6 @@
           <instructions>
             <!--This embed header is needed because there is no bundle that exports this package-->
             <Embed-Dependency>commons-math3</Embed-Dependency>
-            <Bundle-Activator>trial.MyActivator</Bundle-Activator>
           </instructions>
         </configuration>
       </plugin>
