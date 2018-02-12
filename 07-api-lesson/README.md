@@ -52,7 +52,10 @@ Then, we will create a second service provider that factors number using a diffe
 
 ### Step 7 - Create `trial` service provider and activator
  * Up for a challenge? Try to writer the service provider class (`TrialDivisionProvider`) 
- yourself. Otherwise, copy the code from 
+ yourself. 
+ * Up for less of a challenge? Looks the source for `TrialDivisionProvider` and
+ `MyActivator` in `07-api-lesson/trial/src/main/java/trial/` and try and recreate it.
+ * If all else fails, copy and paste the code from `07-api-lesson/trial/src/main/java/trial/`
 
 ### Step 8 - Fix up the POM file
  * Add the dependencies for `osgi.core` and the Apache math library
@@ -65,9 +68,15 @@ Then, we will create a second service provider that factors number using a diffe
 `(service:get api.Factorizer) getFactors 42`
 
 ### Step 10 - Create the `sieve` module
+* Essentially the same steps for the `trial` module, expect the word `sieve` replaces
+the word `trial`. 
+* NOTE: Copy and paste at least the body of the method `getFactors` from the source code:
+`07-api-lesson/sieve/src/main/java/sieve/SieveProvider.java`
 
 ### Step 11 - Build, install, and test the `sieve` service provider
 `sieve=$.context getServiceReferences api.Factorizer "(service.id=94)"`
+
+HINT: Find the `service.id` using the `capabilities` command.
 
 
 ### Take Away
