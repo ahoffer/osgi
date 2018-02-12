@@ -33,15 +33,15 @@ Learn the pillars of OSGi:
 ## Lesson 5: Create a Service
 * Services instead of methods or functions
 * Service as POJO
-* Registering  service programmatically
+* Registering a service programmatically
 
-## Lesson 6: Register a Service
+## Lesson 6: Consuming a service
 * Getting hold of a service programmatically
 
 ## Lesson 7: API
 * Decouple interface from implementation
 
-## Lesson 8: Service Provider
-* Implementing the service provider
-* Registering the service provider
-* Finding and invoking the service provider from the Karaf shell
+## Lesson 8: Blueprint
+* OSGi Blueprint Specification
+* Java beans
+* Dependency injection framework
