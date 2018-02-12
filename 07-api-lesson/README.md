@@ -74,11 +74,19 @@ the word `trial`.
 `07-api-lesson/sieve/src/main/java/sieve/SieveProvider.java`
 
 ### Step 11 - Build, install, and test the `sieve` service provider
-`sieve=$.context getServiceReferences api.Factorizer "(service.id=94)"`
-
+Test it! First, get the service reference to the `sieve` Factorizer. 
 HINT: Find the `service.id` using the `capabilities` command.
 
+    sref=($.context getServiceReferences api.Factorizer "(service.id=115)" ) 0
 
+Then get the actual service object:
+
+    provider=$.context getService $sref
+   
+Finally, invoke the service:
+
+    $provider getFactors 42
+ 
 ### Take Away
 - A service is defined by a **Java interface**. An implementer of a service interface is called a 
 service provider. Often it is just referred to as an **Impl**.
