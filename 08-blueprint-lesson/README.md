@@ -1,4 +1,4 @@
-# Leson 07 - The OSGi Blueprint Specification
+# Leson 08 - The OSGi Blueprint Specification
 Objective use Apache Aries Blueprint to create your service provider object and register it
 with OSGi. This replaces using an `Activator` class to create and register the service.
 
@@ -9,15 +9,16 @@ New terms:
 * Dependency injection
 * Java bean
  
-
-  What is a Java bean? The definition is simple. But is it helpful? Wikipedia says:
+# Of Beans and Containers 
+  What is a Java bean? There is a simple definition. But is it helpful? 
+  According to Wikipedia:
   
   _In computing based on the Java Platform, JavaBeans are classes that encapsulate many objects 
   into a single object (the bean). They are serializable, have a zero-argument constructor, 
   and allow access to properties using getter and setter methods. The name "Bean" was given 
   to encompass this standard, which aims to create reusable software components for Java._
   
-  That sounds like fancy name for an object. A bean is an object that follows a few rules. 
+  That sounds like fancy name for an **object**. A bean is an **object** that follows a few rules. 
   It must have getters and setters that use a naming convention. This let's frameworks like
   Blueprint manipulate them more easily. A framework like Blueprint creates a "container" that
   manages the creation and initialization of beans. Containers  were created because
@@ -25,18 +26,18 @@ New terms:
   especially tedious when you had objects that were composed of objects, 
   which in turn were made of more objects....
 
-  At some point, someone must have said to his team: "Let's declare all our object in an 
-  XML file and call   them beans. We'll write code read the XML and build up objects according
+  At some point, someone must have said to his team: "Let's declare all our objects in an 
+  XML file and call them **beans**. We'll write code to read the XML and build up objects according
    to a specification."
 
-  And someone else spoke up: "We can give each bean a name or ID when we declare it in XML. 
+  And someone else spoke up: "We can give each bean a name or ID when we declare it in the XML. 
   Then we'll make an uber object to own all of these beans and manage their lifecycle. 
   We'll call it a "container".
 
   The room was probably getting pretty excited when a couple of people shouted
   "dependency injection! inversion of control!". Everyone probably nodded and agreed to call it
   a "dependency injection framework". Where "dependency injection" meant to create an object and
-  then add it to another object. Imagine an Address object and a Person object:
+  then add it to another object. For example, imagine an Address object and a Person object:
   
   ```java
   Address a = new Address("Kramgasse 10"); //The zero-arg constructor rule was quickly relaxed
@@ -45,8 +46,8 @@ New terms:
   Class `Person` depends on class `Address`. Instantiating an Address and setting on a Person is
   injecting a dependency. 
   
-  The *dependency injection framework* idea has been extended to a thousand different
-  things. In this lesson, it is used to create a bean and register an OSGi service. 
+  The *dependency injection framework* idea has been extended to do a thousand different
+  things. In this lesson, we use it to create a bean and register it as an OSGi service. 
   
   
 ### Step 01 - Setup
