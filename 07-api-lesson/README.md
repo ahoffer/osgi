@@ -78,5 +78,5 @@ service provider. Often it is just referred to as an **Impl**.
 - It is outside the scope of this tutorial, but services providers can be registered with 
 additional properties. You can filter on these properties to get a particular service provider.
 
-*TODO: Explain the difference between services and service references, maybe in the context of the 
-whiteboard pattern?*
+*<TODO: Explain the difference between services and service references, maybe in the context of the 
+whiteboard pattern?>*
