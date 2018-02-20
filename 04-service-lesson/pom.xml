@@ -2,19 +2,18 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>_</artifactId>
-        <groupId>lesson</groupId>
-        <version>0.1.0</version>
-    </parent>
+
+    <groupId>lesson</groupId>
+    <artifactId>04-service-lesson</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>03-bundle-listener-lesson</artifactId>
     <packaging>bundle</packaging>
     <dependencies>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.21</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.6.1</version>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
@@ -31,7 +30,16 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-Activator>listener.Activator</Bundle-Activator>
+                        <!--This embed header is needed because there is no bundle that exports this package-->
+                        <Embed-Dependency>
+                            commons-math3
+                        </Embed-Dependency>
+                        <Bundle-Activator>org.foo.MyServiceRegistration</Bundle-Activator>
+                        <!--These exports are needed for the service consumer lesson-->
+                        <Export-Package>
+                            org.apache.commons.math3.primes,
+                            org.foo
+                        </Export-Package>
                     </instructions>
                 </configuration>
             </plugin>

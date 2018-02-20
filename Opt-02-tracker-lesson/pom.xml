@@ -5,21 +5,29 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>lesson</groupId>
-  <artifactId>blueprint</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <artifactId>opt-02-tracker-lesson</artifactId>
+  <version>1.0-SNAPHOT</version>
+
 
   <packaging>bundle</packaging>
-
   <dependencies>
     <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.25</version>
+    </dependency>
+    <!--We import listener lesson so we can use the EventLookupObject class
+    to convert status and event codes into human-readable messages. Later, we will make this
+    a proper OSGi service.-->
+    <dependency>
       <groupId>lesson</groupId>
-      <artifactId>api</artifactId>
+      <artifactId>opt-01-bundle-listener-lesson</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-math3</artifactId>
-      <version>3.4.1</version>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.core</artifactId>
+      <version>6.0.0</version>
     </dependency>
   </dependencies>
   <build>
@@ -31,8 +39,7 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <!--This embed header is needed because there is no bundle that exports this package-->
-            <Embed-Dependency>commons-math3</Embed-Dependency>
+            <Bundle-Activator>tracker.Activator</Bundle-Activator>
           </instructions>
         </configuration>
       </plugin>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>lesson</groupId>
+  <artifactId>03-logging-lesson</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <!--The packaging directive tells maven to make a bundle and not a jar. That means
+   adding OSGi headers to the to META-INF/MANIFEST.MF file, and including the blueprint file
+    in the OSGI-ING/bluprint directory. -->
+  <packaging>bundle</packaging>
+  <!--Every POM file that builds a bundle needs to include the bundle plugin. -->
+  <dependencies>
+
+    <!--Notice that the artifacId has the term "API" in it. This usually indicates
+     the dependencies ONLY defines interfaces and does not have an actual implementation.
+     Karaf provides a logging implementation for the skf4j API. When the bundle starts,
+     the bundle automatically use the implementation provided by Karaf. -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.21</version>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.core</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>3.2.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-Activator>org.foo.LoggingActivator</Bundle-Activator>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

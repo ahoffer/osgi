@@ -1,4 +1,4 @@
-# Leson 05 - Creating a service
+# Leson 04 - Creating a service
 We will create a service that breaks a number into its prime factors. We will use an Apache math library to do the work. But we will expose the library as an OSGi service.
 
 ### Step 1 - OSGi services

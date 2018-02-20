@@ -1,4 +1,4 @@
-# Lesson 06 - Consuming a Service
+# Lesson 05 - Consuming a Service
 
 In the previous lession you consumed a service 
 

@@ -1,4 +1,4 @@
-# Lesson 02 - Adding Logging
+# Lesson 03 - Adding Logging
 
 ### Step 1 - Update your Activator
 Change your activator class to look like the one in this project.

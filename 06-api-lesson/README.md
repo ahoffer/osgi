@@ -1,4 +1,4 @@
-# Leson 07 - Separating a Service from its Implementation
+# Leson 06 - Separating a Service from its Implementation
 In this lesson, we separate the definition of the **Factorizer** service from its implementation.
 Then, we will create a second service provider that factors number using a different algorithm.
 
