@@ -1,9 +1,9 @@
-package org.foo;
+package lesson;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
-// Test installing and uninstalling bundles.
+// Test installing, starting, stopping bundles
 
 // The error:
 // Unable to resolve bundle [85](R 85.0): missing requirement [bundle [85](R 85.0)]
