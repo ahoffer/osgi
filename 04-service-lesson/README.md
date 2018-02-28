@@ -1,18 +1,29 @@
-# Leson 04 - Creating a service
-We will create a service that breaks a number into its prime factors. We will use an Apache math library to do the work. But we will expose the library as an OSGi service.
+# Creating an OSGi service
+We will create a service that breaks a number into its prime factors. We will use an Apache 
+math library to do the work. We will expose the library as an OSGi service.
 
-### Step 1 - OSGi services
+### Whate are  OSGi services
 [Read about what "service" means in OSGi](services.md).
 
-### Step 2 - Create a Service class
-- Create a class (I called mine `Factorizer`) with a single public method :
+### Create your module and class
+Create a new maven module. The example code uses these maven coordinates: 
 
-`public List<Integer> getFactors(Integer number)`
+```xml
+<groupId>lesson</groupId>
+<artifactId>04-service-lesson</artifactId>
+<version>1.0-SNAPSHOT</version>
+``` 
+ 
+- Create a class for the service. The sample code uses the class name `Factorizer` and the 
+package name `lesson`.
+- Add a single public method to the class. I called mine `getFacgtors`. Below is the method
+signature. Don't worry about the body of the method. That comes later.
 
-Don't worry about the body of the method. That comes later.
+`public List<Integer> getFactors(Integer number) {}`
 
-### Step 3 - Add a numerical library
-- Add this Apache math library as a dependency:
+
+### Add a numerical library
+- Add this Apache math library as a dependency in the POM file:
 ```xml
 <dependency>
     <groupId>org.apache.commons</groupId>
@@ -20,50 +31,57 @@ Don't worry about the body of the method. That comes later.
     <version>3.6.1</version>
 </dependency>
 ```
-### Step 4 - Implement the method
-- Use the `Primes.primeFactors` method to do the factorization.
+### Implement the method
+- Use the `Primes.primeFactors` method to do the factorization and return a list of 
+prime factors
 
-### Step 5 - Register the service
-- Implement the `start()` and `stop()` to register and unregister the service.
-```
-private ServiceRegistration<?> serviceRegistration;
-    
- public void start(BundleContext context) throws Exception {
-        serviceRegistration = context.registerService(Factorizer.class, new Factorizer(), null);
-    }
+### Register the service
+- Review the previous lesson about Blueprint. Create a `blueprint.xml` file for the current 
+module
+- Create the service object and register it as a service provider in the OSGi runtime. Add this 
+to your blueprint file:
 
-    public void stop(BundleContext context) throws Exception {
-        serviceRegistration.unregister();
-    }
-```
+```xml
+  <!--  This element will register an OSGi service under the name "factor".
+    The service will advise that it implements the public methods of the "lesson.Factorizer" class.-->
+  <service id="factor" auto-export="all-classes">
+    <!--This is neat shortcut to create the bean (object) that implements the service.-->
+    <bean class="lesson.Factorizer"/>
+  </service>
+  ```
 
-### Step 6 - Build and install the bundle
+### Build and install the bundle
 - Build, install and start the bundle.
 - Unless you did some extra work, you get an error trying to start the bundle. My error looked like this:
 >Error executing command: Error executing command on bundles:
-   	Error starting bundle 56: Unable to resolve lesson.05-service-lesson [56](R 56.0): missing requirement [lesson.05-service-lession [56](R 56.0)] osgi.wiring.package; (&(osgi.wiring.package=org.apache.commons.math3.primes)(version>=3.6.0)(!(version>=4.0.0))) Unresolved requirements: [[lesson.05-service-lession [56](R 56.0)] osgi.wiring.package; (&(osgi.wiring.package=org.apache.commons.math3.primes)(version>=3.6.0)(!(version>=4.0.0)))]
+   	Error starting bundle 56: Unable to resolve lesson.04-service-lesson [56](R 56.0): missing requirement [lesson.04-service-lession [56](R 56.0)] osgi.wiring.package; (&(osgi.wiring.package=org.apache.commons.math3.primes)(version>=3.6.0)(!(version>=4.0.0))) Unresolved requirements: [[lesson.05-service-lession [56](R 56.0)] osgi.wiring.package; (&(osgi.wiring.package=org.apache.commons.math3.primes)(version>=3.6.0)(!(version>=4.0.0)))]
 
 - Nice and cryptic! It's telling us it cannot find `org.apache.commons.math3.primes`
 - **HINT:** use the `headers` and `diag` commands to get better information. Try them now.
 - Why not? We included it as a maven dependency!
-- OSGi imposes a new level of dependency management. It assumes there is another bundle running in the Karaf container that **exports** the package `org.apache.commons.math3.primes`. Our bundle will request to **import** the package. 
+- OSGi imposes a new level of dependency management. It assumes there is another bundle running 
+in the Karaf container that **exports** the package `org.apache.commons.math3.primes`. 
+Our bundle will request to **import** the package. 
 - Therefore our dependency, `org.apache.commons.math3.primes` is NOT a part of the bundle's JAR file.
 - Verify this by opening the bundle's JAR file in the target directory and examining its contents.
 - Because no bundle in our Karaf container exports that package, the OSGi runtime raises an error.
 
-### Step 7 - Fix the dependency problem
-- To solve the problem, we can **embed** the dependency, so that the class files of `org.apache.commons.math3.primes` are added to the bundle's JAR file.
+### Fix the dependency problem
+- To solve the problem, we can **embed** the dependency, so that the class files 
+of `org.apache.commons.math3.primes` are added to the bundle's JAR file.
 - Include the math library in the bundle's JAR using a maven bundle plugin instruction: 
   - `<Embed-Dependency>commons-math3</Embed-Dependency>`
 - Inspect the bundle's JAR file and verify the math library is now included.
 
-### Step 8 - Update the bundle
-- Verify it is started using `list`
+### Update the bundle
+- Rebuild, update the bundle. Verify it is started using `list`
 - Use the command `services` to see it in the list of available services.
 
-#### Karaf shell magic
+### Test the service from the console
 Let's use the Karaf shell to interact with the service.
-1. The Karaf shell lets you define variables just like any other shell. It also includes some special, pre-defined variables like `.console`. Use the "resolve" operator to get the value of a variable. Try this:
+1. The Karaf shell lets you define variables just like any other shell. It also includes 
+some special, pre-defined variables like `.console`. Use the "resolve" operator to get 
+the value of a variable. Try this:
 
         $.context
 
@@ -71,17 +89,16 @@ This returns a bundle context of the root bundle, bundle 0.
 
 2. Use the root bundle context to get a service reference for our Factorizer service:
 
-       $.context getServiceReference "org.foo.Factorizer"
+       $.context getServiceReference "lesson.Factorizer"
        
 3. Create a variable to hold the service reference (spaces matter!)
 
-       sref=$.context getServiceReference "org.foo.Factorizer"
+       sref=$.context getServiceReference "lesson.Factorizer"
        
 4. Get a hold of the instance of Factorizer:
 
        $.context getService $sref
-       
-       
+             
 5. Create a variable to hold the Factorizer object
 
        factorizer=$.context getService $sref

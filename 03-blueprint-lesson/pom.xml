@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>lesson</groupId>
-  <artifactId>02-blueprint-lesson</artifactId>
+  <artifactId>03-blueprint-lesson</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <build>

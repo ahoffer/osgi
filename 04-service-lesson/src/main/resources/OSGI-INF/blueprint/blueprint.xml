@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint
+  xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+
+  <!--  This element will register an OSGi service under the name "factor".
+    The service will advise that it implements the public methods of the "lesson.Factorizer" class.-->
+  <service id="factor" auto-export="all-classes">
+    <!--This is neat shortcut to create the bean (object) that implements the service.-->
+    <bean class="lesson.Factorizer"/>
+  </service>
+
+</blueprint>

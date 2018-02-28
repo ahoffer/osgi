@@ -1,6 +1,6 @@
-package org.bar;
+package lesson;
 
-import org.foo.Factorizer;
+import lesson.Factorizer;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;

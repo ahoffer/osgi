@@ -1,4 +1,4 @@
-# Leson 02 - The OSGi Blueprint Specification
+# Leson 03 - The OSGi Blueprint Specification
 Objective use Apache Aries Blueprint to create your service provider object and register it
 with OSGi. This replaces using an `Activator` class to create and register the service.
 
@@ -54,7 +54,7 @@ New terms:
 * Create a new maven module with these coordinates:
 ```xml
 <groupId>lesson</groupId>
-<artifactId>02-blueprint-lesson</artifactId>
+<artifactId>03-blueprint-lesson</artifactId>
 <version>1.0-SNAPSHOT</version>
 ```
 * Create a new Java class `MyBean` in a package named `blueprintlesson`
@@ -142,7 +142,16 @@ Install the feature like so:
     feature:install aries-blueprint
 
 * Now, start your bundle
-* Verify the `muInitMethod`'s message was printed
+* Verify the `myInitMethod`'s message was printed
+
+### Take-aways
+- Dependency injection frameworks like Blueprint are intended to save the developer from
+writing tedious code for instantiating and connecting graphs of objects
+- Using blueprint let's you remove dependencies on most or all code that interacts directly
+with the OSGi runtime
+- Debugging problems that don't show up in a debugger is a pain (see below)
+- Karaf implements a system called **features**. For now, 
+think of a feature as a "bundle of bundles" that lives in a special feature repository
 
  ### Sidebar - Debugging declarative code
  It can be frustrating to debug declarative code like Blueprint. While writing this tutorial, I 
