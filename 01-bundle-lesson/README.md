@@ -35,7 +35,7 @@ the POM file to include this dependency:
 </dependency>
 ```
 
-### Implement BundleActivator  methods
+### Implement BundleActivator methods
 - Edit the `MyActivator.java` file. Change the class definition to implement the interface named
 `BundleActivator`
 - Let your IDE import the interface. Then let your IDE implement the interface's methods for you.
@@ -88,7 +88,6 @@ guess why Karaf provides this particular error message.
 ### Rebuild and reinstall bundle
 What happened this time?
 
-
 ### Add packaging directive
  Add this line to your POM file:
 
@@ -96,7 +95,6 @@ What happened this time?
 
 - Rebuild and reinstall bundle
  - Use the `list` command to verify the bundle is correctly installed
-
 
 ### Start the bundle
 - If you have not yet started your bundle, do so now with the `start` command
@@ -141,5 +139,11 @@ Otherwise nothing will happen.
   - Execute the command `bundle:watch --start *`
   - Anytime a newer version of any bundle is installed in the local maven repository, 
   it will be loaded into Karaf and started (restarted)
+
+### Experiment with Karaf console commands
+* Try `headers`, `capabilities`, and any other commands that look
+interesting.
+* You can use the bundle's name or its PID (persistent ID) with these commands.
+
 
 [Learn More](https://www.osgi.org/developer/architecture)

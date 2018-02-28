@@ -2,12 +2,9 @@
 <blueprint
   xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
 
-
   <!--Create a new instance of a class. Give it an ID so we can refer to it later.
-  The "container" keeps track of the new object and its ID-->
-  <bean class="blueprintlesson.TrialDivisionProvider" id="trial"/>
-
-  <!--Register the bean as providing an OSGi service that conforms to the interface api.Factorizer-->
-  <service id="trialService" interface="api.Factorizer" ref="trial"/>
+  The "container" keeps track of the new object and its ID.
+  Also, invoke an initialization routine when the bean is created. -->
+  <bean class="blueprintlesson.MyBean" id="mybean" init-method="myInitMethod"/>
 
 </blueprint>

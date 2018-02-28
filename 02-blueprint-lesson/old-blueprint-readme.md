@@ -51,14 +51,9 @@ New terms:
   
   
 ### Step 01 - Setup
-* Create a new maven module with these coordinates:
-```xml
-<groupId>lesson</groupId>
-<artifactId>02-blueprint-lesson</artifactId>
-<version>1.0-SNAPSHOT</version>
-```
-* Create a new Java class `MyBean` in a package named `blueprintlesson`
-* Add a public void method named `myInitMethod`. In the method, print something to `System.out`
+* Use the `trial` module from lesson 07
+* Delete the Activator class and the activator instruction from the POM file
+* Delete the dependency on `osgi.core` from the POM file
   
 ### Step 02 - Create the blueprint file
  
@@ -66,31 +61,15 @@ New terms:
 
       src/main/resources/OSGI-INF/blueprint
     
-* Create an empty file named `blueprint.xml` The filename doesn't really matter, as long as it 
-ends in `.xml` and is in the magic directory.
-* Add the `xml` and `blueprint` elements to the file:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
-  <!--Your stuff goes here-->
-</blueprint>
-```
-
-### Step 03 - Define your bean in the blueprint file
-* Type this into your blueprint file. As you type it, try to think about what each piece might 
-mean:
-
-```xml
-  <bean class="blueprintlesson.MyBean" id="mybean" init-method="myInitMethod"/>
-```
-
-* Check your understand by reading the comments in the `blurprint.xml` file inside this git 
-repository.
+* Grab the `blueprint.xml` file from this lesson's source code tree and stick it in the `blueprint` 
+directory.
+* The Maven Bundle Plugin includes the `blueprint.xml`when it packages the bundle. Karaf will 
+ magically process the `blueprint.xml` file when the bundle loads. Or will it?
  
  
 ### Step 03 - Build, install, and start the bundle
- * Build, install, and start your bundle
+ * Tidy up things. Uninstall the existing `sieve` and `trial` bundles
+ * Build, install, and start the updated `trial` bundle
  
 #### Oops. Did you get this error too?
  
@@ -142,7 +121,11 @@ Install the feature like so:
     feature:install aries-blueprint
 
 * Now, start your bundle
-* Verify the `muInitMethod`'s message was printed
+* Verify the Factorizer service started using the `capabilities` command.
+* Finally, try it out!
+
+      (service:get api.Factorizer) getFactors 56
+
 
  ### Sidebar - Debugging declarative code
  It can be frustrating to debug declarative code like Blueprint. While writing this tutorial, I 
@@ -157,3 +140,11 @@ Install the feature like so:
  ### References
 The best Blueprint how-to guide is a 
    [2009 article from IBM Developer Works](https://www.ibm.com/developerworks/library/os-osgiblueprint/).
+
+#### Last words
+Welcome to the end of the lessons! Pat yourself on the back. Now meditate on this question: 
+
+_Was it worth it_? 
+
+Do the advantages of OSGi outweigh the additional complexity? What kinds of applications thrive
+in an OSGi world? What kinds of applications don't?
