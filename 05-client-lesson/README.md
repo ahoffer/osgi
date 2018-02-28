@@ -12,7 +12,7 @@ In the previous lesson you registered a service. In this lessons, you will write
 ```
 
 ### Step 02 - Create a class
-- Create a new class named `MyServiceConsumer` in package `lesson`
+- Create a new class named `MyServiceConsumer` in package `consumer`
 - Make it a implement of `BundleActivator`
 - Give it the classs a variable:
 
@@ -28,7 +28,7 @@ In the previous lesson you registered a service. In this lessons, you will write
 - Add the Maven bundle plugin
 - Set up the POM to build the package as a bundle `<packaging>bundle</packaging>`
 - Add a dependency on your factorization artifact
-- Add a configuration to the maven bundle plugin to make `lesson.MyServiceConsuumer` 
+- Add a configuration to the maven bundle plugin to make `consumer.MyServiceConsuumer` 
 the Bundle-Activator.
 
 ### Step 04 - Build and install the bundle

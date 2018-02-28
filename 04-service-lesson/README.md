@@ -15,8 +15,8 @@ Create a new maven module. The example code uses these maven coordinates:
 ``` 
  
 - Create a class for the service. The sample code uses the class name `Factorizer` and the 
-package name `lesson`.
-- Add a single public method to the class. I called mine `getFacgtors`. Below is the method
+package name `provider`.
+- Add a single public method to the class. I called mine `getFactors`. Below is the method
 signature. Don't worry about the body of the method. That comes later.
 
 `public List<Integer> getFactors(Integer number) {}`
@@ -46,7 +46,7 @@ to your blueprint file:
     The service will advise that it implements the public methods of the "lesson.Factorizer" class.-->
   <service id="factor" auto-export="all-classes">
     <!--This is neat shortcut to create the bean (object) that implements the service.-->
-    <bean class="lesson.Factorizer"/>
+    <bean class="provider.Factorizer"/>
   </service>
   ```
 
@@ -89,11 +89,11 @@ This returns a bundle context of the root bundle, bundle 0.
 
 2. Use the root bundle context to get a service reference for our Factorizer service:
 
-       $.context getServiceReference "lesson.Factorizer"
+       $.context getServiceReference "provider.Factorizer"
        
 3. Create a variable to hold the service reference (spaces matter!)
 
-       sref=$.context getServiceReference "lesson.Factorizer"
+       sref=$.context getServiceReference "provider.Factorizer"
        
 4. Get a hold of the instance of Factorizer:
 
