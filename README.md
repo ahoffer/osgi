@@ -24,16 +24,14 @@ Learn the pillars of OSGi:
 * Add logging interface as dependency
 * Use logging 
 
-## Lesson 3: Add a Bundle Listener
-* Spying on other bundles
+## Lesson 3: OSGi Blueprint
+* OSGi Blueprint Specification
+* Java beans
+* Dependency injection framework
 
-## Lesson 4: Add a Tracker
-* Tired of listening? Start tracking!
-
-## Lesson 5: Create a Service
+## Lesson 4: Create a Service
 * Services instead of methods or functions
 * Service as POJO
-* Registering a service programmatically
 
 ## Lesson 6: Consuming a service
 * Getting hold of a service programmatically
@@ -41,7 +39,4 @@ Learn the pillars of OSGi:
 ## Lesson 7: API
 * Decouple interface from implementation
 
-## Lesson 8: Blueprint
-* OSGi Blueprint Specification
-* Java beans
-* Dependency injection framework
+
