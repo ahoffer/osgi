@@ -37,7 +37,7 @@
             <!--These exports are needed for the service consumer lesson-->
             <Export-Package>
               org.apache.commons.math3.primes,
-              lesson
+              provider
             </Export-Package>
           </instructions>
         </configuration>

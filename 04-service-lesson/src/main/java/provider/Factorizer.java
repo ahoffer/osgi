@@ -1,4 +1,4 @@
-package lesson;
+package provider;
 
 import java.util.List;
 import org.apache.commons.math3.primes.Primes;

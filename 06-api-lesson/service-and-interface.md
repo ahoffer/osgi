@@ -34,10 +34,3 @@ I prefer calling implementations **Providers**. My examples look like:
 
 `public class SieveProvider implements Factorizer`
 
-----
-
-
-### Whiteboard Pattern
-Want to geek-out? Read: https://www.osgi.org/wp-content/uploads/whiteboard1.pdf. Then explain 
-it to me because I haven't taken the time to figure it all out. Although, I think a more idiomatic
-term might be "pin board" and not "white board". Read it and tell me what you think.
