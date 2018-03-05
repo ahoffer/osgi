@@ -33,10 +33,9 @@ Learn the pillars of OSGi:
 * Services instead of methods or functions
 * Service as POJO
 
-## Lesson 6: Consuming a service
+## Lesson 5: Consuming a service
 * Getting hold of a service programmatically
 
-## Lesson 7: API
+## Lesson 6: API
 * Decouple interface from implementation
-
-
+* Create multiple providers that for the same API
