@@ -39,3 +39,10 @@ Learn the pillars of OSGi:
 ## Lesson 6: API
 * Decouple interface from implementation
 * Create multiple providers that for the same API
+
+
+### Addtional Resources
+ - [OSGi Bundles and the maven-bundle-plugin](OSGi Bundles and the maven-bundle-plugin-v4-20180305_Author-Richard_Porter.pdf). 
+ Tutorial by [Richard Porter](https://github.com/coyotesqrl). Covers api-implementation separation and helpful dos-and-dont'ts
+ - [OSGi Troubleshooting](https://codice.atlassian.net/wiki/spaces/DDF/pages/29261826/OSGi+Troubleshooting) 
+ by [Brendan Hofmann](https://github.com/brendan-hofmann)
