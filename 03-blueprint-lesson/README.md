@@ -89,7 +89,7 @@ mean:
 repository.
  
  
-### Step 03 - Build, install, and start the bundle
+### Step 04 - Build, install, and start the bundle
  * Build, install, and start your bundle
  
 #### Oops. Did you get this error too?
@@ -109,7 +109,7 @@ Error executing command: Error executing command on bundles:
 * Try to diagnose the error. Narrow it down. Restate the issue in your own words.
 
 #### This is what I did
-* This is what I did. Right after I said "Oh crud, what went wrong"
+* This is what I did. Right after I said "Oh crud, what went wrong?"
 * Use the `headers` command we see this import is not satisfied:
 
       org.osgi.service.blueprint;version="[1.0.0,2.0.0)"
@@ -123,7 +123,7 @@ Where did that come from? The Maven Bundle Plugin saw that someone used blueprin
 Use the command `exports` and `grep`.
 * Nope. Nobody exports the package. 
 
-### Step 04 - Using Karaf features
+### Step 05 - Using Karaf features
 The easiest solution is to use Karaf's *features*. A feature is like a Maven 
 module for Karaf. A feature can contain multiple bundles and can declare dependencies 
 on other features. Karaf features are deployed into repositories and can be installed from a 
