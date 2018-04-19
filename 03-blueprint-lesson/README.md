@@ -1,5 +1,5 @@
 # Leson 03 - The OSGi Blueprint Specification
-Objective use Apache Aries Blueprint to create your service provider object and register it
+The objective of this lesson is to use the Apache Aries Blueprint to create your service provider object and register it
 with OSGi. This replaces using an `Activator` class to create and register the service.
 
 New terms:
