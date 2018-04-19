@@ -39,7 +39,7 @@ the IDE.
       logger.info("BUNDLE START");
 
 ### Missing dependencies
--Fix up any missing dependencies.
+Fix up any missing dependencies.
 ```xml
  <dependency>
   <groupId>org.slf4j</groupId>
@@ -61,7 +61,7 @@ To view the log, use the commands `display` or `log:tail`
 
 ### Summary
 Notice that our logger dependency is for an **api**. An API is usually nothing more than a collection
- of interface. It is doesn't know how to *do* anything. Consequently, it is small and light.
+ of interfaces. It is doesn't know how to *do* anything. Consequently, it is small and light.
  **Karaf** provides an implementation of the logger. It is provided as part of base Karaf. 
  The OSGi runtime takes care of finding a bundle the **exports** `Logger` and `LoggerFactory`.
  `LoggerFactory` is used to create a concrete instance of a `Logger.
