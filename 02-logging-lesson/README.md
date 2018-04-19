@@ -64,7 +64,7 @@ Notice that our logger dependency is for an **api**. An API is usually nothing m
  of interfaces. It is doesn't know how to *do* anything. Consequently, it is small and light.
  **Karaf** provides an implementation of the logger. It is provided as part of base Karaf. 
  The OSGi runtime takes care of finding a bundle the **exports** `Logger` and `LoggerFactory`.
- `LoggerFactory` is used to create a concrete instance of a `Logger.
+ `LoggerFactory` is used to create a concrete instance of a `Logger`.
  
 ### Take-Away 
  Bundles can depend on APIs (interfaces). Other bundles can provide one (or more) implementations 
