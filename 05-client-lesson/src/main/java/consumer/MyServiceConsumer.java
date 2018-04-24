@@ -1,21 +1,20 @@
 package consumer;
 
-import org.osgi.framework.BundleActivator;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
 import provider.Factorizer;
 
-public class MyServiceConsumer implements BundleActivator {
+public class MyServiceConsumer {
 
-  public void start(BundleContext context) {
+  private Factorizer factorizer;
 
-    // Here is how to grab the service if you are not using bluerprint
-    ServiceReference<Factorizer> serviceReference = context.getServiceReference(Factorizer.class);
-    Factorizer factorizer = context.getService(serviceReference);
-
-    // Use the service
-    System.out.println(factorizer.getFactors(105));
+  public Factorizer getFactorizer() {
+    return factorizer;
   }
 
-  public void stop(BundleContext context) {}
+  public void setFactorizer(Factorizer factorizer) {
+    this.factorizer = factorizer;
+  }
+
+  public void start() {
+    System.out.println(factorizer.getFactors(105));
+  }
 }

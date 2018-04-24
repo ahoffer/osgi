@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint
+  xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+  xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.0.0">
+
+    <reference id="serviceFactorizer"
+      interface="provider.Factorizer" ext:proxy-method="classes"/>
+
+    <bean class="consumer.MyServiceConsumer" init-method="start">
+        <property name="factorizer" ref="serviceFactorizer"/>
+    </bean>
+
+</blueprint>
