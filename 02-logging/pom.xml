@@ -2,18 +2,26 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
   <groupId>lesson</groupId>
-  <artifactId>04-service-lesson</artifactId>
+  <artifactId>logging</artifactId>
   <version>1.0-SNAPSHOT</version>
-
-  <modelVersion>4.0.0</modelVersion>
+  <!--The packaging directive tells maven to make a bundle and not a jar. That means
+   adding OSGi headers to the to META-INF/MANIFEST.MF file, and including the blueprint file
+    in the OSGI-ING/bluprint directory. -->
   <packaging>bundle</packaging>
+  <!--Every POM file that builds a bundle needs to include the bundle plugin. -->
   <dependencies>
+
+    <!--Notice that the artifacId has the term "API" in it. This usually indicates
+     the dependencies ONLY defines interfaces and does not have an actual implementation.
+     Karaf provides a logging implementation for the skf4j API. When the bundle starts,
+     the bundle automatically use the implementation provided by Karaf. -->
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-math3</artifactId>
-      <version>3.6.1</version>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.21</version>
     </dependency>
     <dependency>
       <groupId>org.osgi</groupId>
@@ -30,15 +38,7 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <!--This embed header is needed because there is no bundle that exports this package-->
-            <Embed-Dependency>
-              commons-math3
-            </Embed-Dependency>
-            <!--These exports are needed for the service consumer lesson-->
-            <Export-Package>
-              org.apache.commons.math3.primes,
-              provider
-            </Export-Package>
+            <Bundle-Activator>lesson.LoggingActivator</Bundle-Activator>
           </instructions>
         </configuration>
       </plugin>

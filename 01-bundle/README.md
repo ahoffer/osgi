@@ -12,7 +12,7 @@ coodinates, use:
 
 ```xml
   <groupId>lesson</groupId>
-  <artifactId>01-bundle-lesson</artifactId>
+  <artifactId>bundle</artifactId>
   <version>1.0-SNAPSHOT</version>
 ```
 
@@ -62,7 +62,7 @@ with bundles and services.
 - Observe:
 
 ```Error executing command: Error installing bundles:
-   	Unable to install bundle mvn:lesson/01-bundle-lesson/1.0-SNAPSHOT: org.osgi.framework.BundleException: OSGi R3 bundle not supported
+   	Unable to install bundle mvn:lesson/bundle/1.0-SNAPSHOT: org.osgi.framework.BundleException: OSGi R3 bundle not supported
 ```
 
 - This is how you know the Maven Bundle Plugin is not configured. Think about and see if you can 
@@ -134,7 +134,7 @@ Otherwise nothing will happen.
 - Stop the bundle. Observe the printed message
 - Uninstall the bundle
 - Use the `list` command to verify the bundle is no longer installed
-- Install the bundle from your local maven repository with the command `install mvn:lesson/01-bundle-lesson/1.0-SNAPSHOT`
+- Install the bundle from your local maven repository with the command `install mvn:lesson/bundle/1.0-SNAPSHOT`
 - For the rest of the tutorial, we will take a short-cut to updating bundles.
   - Execute the command `bundle:watch --start *`
   - Anytime a newer version of any bundle is installed in the local maven repository, 

@@ -42,11 +42,11 @@ In this lesson, we separate the definition of the **Factorizer** service from it
  * Build the `api` module to create a bundle
  * Install the bundle in Karaf
  * Use the `headers` command to verify the bundle exports the `api` package
- 
+
  
  ### What's was the point of that?
  What's was the point of that? The module named `api` defines a Java interface. The interface 
- performs no work, so why?.  The interface will be used as an OSGi service. 
+ performs no work, so why?. The interface will be used as an OSGi service. That's why.
  
  ### Why is the module named `api`?
  In the  most general case, we can think of a Java interface or OSGI service as an **API**

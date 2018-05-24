@@ -54,7 +54,7 @@ New terms:
 * Create a new maven module with these coordinates:
 ```xml
 <groupId>lesson</groupId>
-<artifactId>03-blueprint-lesson</artifactId>
+<artifactId>blueprint</artifactId>
 <version>1.0-SNAPSHOT</version>
 ```
 * Create a new Java class `MyBean` in a package named `blueprintlesson`

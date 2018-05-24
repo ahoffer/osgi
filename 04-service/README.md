@@ -10,7 +10,7 @@ Create a new maven module. The example code uses these maven coordinates:
 
 ```xml
 <groupId>lesson</groupId>
-<artifactId>04-service-lesson</artifactId>
+<artifactId>04-service</artifactId>
 <version>1.0-SNAPSHOT</version>
 ``` 
  
@@ -54,7 +54,7 @@ to your blueprint file:
 - Build, install and start the bundle.
 - Unless you did some extra work, you get an error trying to start the bundle. My error looked like this:
 >Error executing command: Error executing command on bundles:
-   	Error starting bundle 56: Unable to resolve lesson.04-service-lesson [56](R 56.0): missing requirement [lesson.04-service-lession [56](R 56.0)] osgi.wiring.package; (&(osgi.wiring.package=org.apache.commons.math3.primes)(version>=3.6.0)(!(version>=4.0.0))) Unresolved requirements: [[lesson.05-service-lession [56](R 56.0)] osgi.wiring.package; (&(osgi.wiring.package=org.apache.commons.math3.primes)(version>=3.6.0)(!(version>=4.0.0)))]
+   	Error starting bundle 56: Unable to resolve lesson.service [56](R 56.0): missing requirement [lesson.04-service-lession [56](R 56.0)] osgi.wiring.package; (&(osgi.wiring.package=org.apache.commons.math3.primes)(version>=3.6.0)(!(version>=4.0.0))) Unresolved requirements: [[lesson.05-service-lession [56](R 56.0)] osgi.wiring.package; (&(osgi.wiring.package=org.apache.commons.math3.primes)(version>=3.6.0)(!(version>=4.0.0)))]
 
 - Nice and cryptic! It's telling us it cannot find `org.apache.commons.math3.primes`
 - **HINT:** use the `headers` and `diag` commands to get better information. Try them now.

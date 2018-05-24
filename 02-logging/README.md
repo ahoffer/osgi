@@ -10,7 +10,7 @@ names and version for the maven coordinates
 
 ```xml
 <groupId>lesson</groupId>
-<artifactId>02-logging-lesson</artifactId>
+<artifactId>logging</artifactId>
 <version>1.0-SNAPSHOT</version>
 ```
 
