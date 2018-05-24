@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<blueprint
-  xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
-
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
   <service id="trial" interface="api.Factorizer">
-
-    <!--DO NOT ADD THE SERVICE-PROPERTIES ELEMENT UNTIL THE LESSON INSTRUCTS YOU TO DO SO-->
-    <service-properties>
-      <entry key="name" value="trial"/>
-    </service-properties>
-    <!--END-->
-
     <bean class="trial.TrialDivisionProvider"/>
   </service>
 </blueprint>
