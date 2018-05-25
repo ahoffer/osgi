@@ -7,7 +7,7 @@ In the previous lesson you registered a service. In this lessons, you will write
 - Create a new Maven module in your IDE's current project.
 ```xml
 <groupId>lesson</groupId>
-<artifactId>05-client</artifactId>
+<artifactId>client</artifactId>
 <version>1.0-SNAPSHOT</version>
 ```
 
