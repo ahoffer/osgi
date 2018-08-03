@@ -80,10 +80,10 @@ of `org.apache.commons.math3.primes` are added to the bundle's JAR file.
 ### Test the service from the console
 Let's use the Karaf shell to interact with the service.
 1. The Karaf shell lets you define variables just like any other shell. It also includes 
-some special, pre-defined variables like `.console`. Use the "resolve" operator to get 
-the value of a variable. Try this:
+some special, pre-defined variables like `.console`. Like other shells, variables are retrieved 
+by prepending them with `$`. Try this:
 
-        $.context
+        echo $.context
 
 This returns a bundle context of the root bundle, bundle 0.
 
@@ -105,7 +105,7 @@ This returns a bundle context of the root bundle, bundle 0.
        
 6. Use the Factorizer to factor a number:
        
-        $factorizer getFactors 42
+        echo $($factorizer getFactors 42)
         
 ### Take Away
 The OSGi model is simple, in theory. Getting it to work is another matter. Bundles can be started 
