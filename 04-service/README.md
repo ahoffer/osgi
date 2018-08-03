@@ -10,7 +10,7 @@ Create a new maven module. The example code uses these maven coordinates:
 
 ```xml
 <groupId>lesson</groupId>
-<artifactId>04-service</artifactId>
+<artifactId>service</artifactId>
 <version>1.0-SNAPSHOT</version>
 ``` 
  
