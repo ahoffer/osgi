@@ -1,6 +1,10 @@
 # Leson 03 - The OSGi Blueprint Specification
-The objective of this lesson is to use the Apache Aries Blueprint to create your service provider object and register it
-with OSGi. This replaces using an `Activator` class to create and register the service.
+The objectives of this lesson are:
+* Understand the basics of containers, beans, and declarative specifications.
+* Use Apache Aries to create a bean and invoke a method on it.
+* Learn new debugging techniques when things do not work as expected. 
+* Learn what a Karaf feature is.
+* Install a Karaf feature.
 
 New terms:
 * Blueprint 
@@ -126,8 +130,9 @@ Use the command `exports` and `grep`.
 ### Step 05 - Using Karaf features
 The easiest solution is to use Karaf's *features*. A feature is like a Maven 
 module for Karaf. A feature can contain multiple bundles and can declare dependencies 
-on other features. Karaf features are deployed into repositories and can be installed from a 
-repository. 
+on bundles and other features. Karaf features are deployed into repositories and can only be 
+installed from a repository. This tutorial is not going to cover Karaf features. Just know that 
+exist and think of them as "collections of bundles."
 
 Search Karaf for a blueprint feature.
 

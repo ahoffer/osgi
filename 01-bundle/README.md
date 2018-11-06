@@ -78,7 +78,7 @@ guess why Karaf provides this particular error message.
       <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
-        <version>3.2.0</version>
+        <version>3.5.1</version>
         <extensions>true</extensions>
       </plugin>
     </plugins>
@@ -110,7 +110,7 @@ Otherwise nothing will happen.
 <plugin>
   <groupId>org.apache.felix</groupId>
   <artifactId>maven-bundle-plugin</artifactId>
-  <version>3.2.0</version>
+  <version>3.5.1</version>
   <extensions>true</extensions>
   <configuration>
     <!-- This section lets you add OSGi headers to the MANIFEST.MF

@@ -3,7 +3,7 @@
 ### Getting started with OSGi
 Learn the pillars of OSGi:
 * Modularity
-* Module lifec ycle
+* Module lifecycle
 * Services
   * Registering and retrieving services
   * Separating programming interfaces from implementations

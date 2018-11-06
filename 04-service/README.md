@@ -2,6 +2,8 @@
 We will create a service that breaks a number into its prime factors. We will use an Apache 
 math library to do the work. We will expose the library as an OSGi service.
 
+NOTE: This lesson was tested with Karaf version 4.2.1.
+
 ### Whate are  OSGi services
 [Read about what "service" means in OSGi](services.md).
 
@@ -61,7 +63,7 @@ to your blueprint file:
 - Why not? We included it as a maven dependency!
 - OSGi imposes a new level of dependency management. It assumes there is another bundle running 
 in the Karaf container that **exports** the package `org.apache.commons.math3.primes`. 
-Our bundle will request to **import** the package. 
+Our bundle requests to **import** the package. 
 - Therefore our dependency, `org.apache.commons.math3.primes` is NOT a part of the bundle's JAR file.
 - Verify this by opening the bundle's JAR file in the target directory and examining its contents.
 - Because no bundle in our Karaf container exports that package, the OSGi runtime raises an error.
@@ -79,34 +81,17 @@ of `org.apache.commons.math3.primes` are added to the bundle's JAR file.
 
 ### Test the service from the console
 Let's use the Karaf shell to interact with the service.
-1. The Karaf shell lets you define variables just like any other shell. It also includes 
-some special, pre-defined variables like `.console`. Like other shells, variables are retrieved 
-by prepending them with `$`. Try this:
+1. Use the command `service:get` to get a service provider. To get a hold of a service, supply
+the command with the name of the interface or API. In this case, the API is the name name as the 
+service provider `provider.Factorizer`. In later lessons, the service will be split into an API
+and an implementation.
 
-        echo $.context
-
-This returns a bundle context of the root bundle, bundle 0.
-
-2. Use the root bundle context to get a service reference for our Factorizer service:
-
-       $.context getServiceReference "provider.Factorizer"
+       service:get provider.Factorizer
+ 
+2. Send the message `getFactors` to the service and pass it the argument `42`.
        
-3. Create a variable to hold the service reference (spaces matter!)
+       (service:get provider.Factorizer) getFactors 42 
 
-       sref=$.context getServiceReference "provider.Factorizer"
-       
-4. Get a hold of the instance of Factorizer:
-
-       $.context getService $sref
-             
-5. Create a variable to hold the Factorizer object
-
-       factorizer=$.context getService $sref
-       
-6. Use the Factorizer to factor a number:
-       
-        echo $($factorizer getFactors 42)
-        
 ### Take Away
 The OSGi model is simple, in theory. Getting it to work is another matter. Bundles can be started 
 and stopped while the application is running. Accounting for your imports, exports, dependencies,
