@@ -1,5 +1,5 @@
-# Leson 07 - Implementing a Service Provider
-In this lesson, we implement a service that actually factors a number.
+# Leson 05 - Implementing a Service Provider
+In this lesson, we implement a service that actually factors a number. 
  
  ### Step 1 - Create the `trial` module
  This module will hold the first implementation of our `Factorizer` service. Use It is called
@@ -18,7 +18,7 @@ In this lesson, we implement a service that actually factors a number.
 
 
 #### Step 2- Add the Apache math library.
-We are no doing to write the factoring algorithm. We will use an Apache library to do the work.
+We are not writing the factoring algorithm. We will use an Apache library to do the work.
 Add this dependency to the module's POM file:
 
 ```xml
@@ -35,7 +35,7 @@ Up for a challenge? Try to write the service provider class.
  * Put it in a package named `trial`
  * Implement the `Factorizer` interface from the previous lesson
  * Use the static method `primeFactors` from the `org.apache.commons.math3.primes.Primes` class
- to do factor the input
+ to factorize the input.
  
 Compare your class to the sample solution.
  
@@ -43,9 +43,6 @@ Compare your class to the sample solution.
 You are created a bundle. What else does your POM file need?
 Update your POM file so that it produces a bundle. 
 Read the list below to make sure you covered everything:
-<br>
-<br>
-<br>
 
  * Add the `api` package from the previous lesson as a dependency
  * Add the `packaging` directive `bundle` 
@@ -64,9 +61,6 @@ what you write with the sample solution.
 ```xml
 <blueprint>
   <service id="trial" interface="api.Factorizer">
-    <service-properties>
-      <entry key="name" value="trial-division"/>
-    </service-properties>
     <bean class="trial.TrialDivisionProvider"/>
   </service>
 </blueprint>
@@ -86,7 +80,7 @@ Look for something like this:
 
 ```test
 service; [api.Factorizer] with properties:
-   name = trial
+   name = trial-division
    service.bundleid = 129
    service.id = 132
    service.scope = bundle
@@ -99,10 +93,8 @@ service; [api.Factorizer] with properties:
 ```
 
 ### Step 6 -- What if?
-* What error would you get if you tried to load this bundle without embedding the library? Take 
-guess
-* Removed the embed directive from the POM file, rebuild and reload. Did you see what you 
-expected?
+* What error would you get if you tried to load this bundle without embedding the library? Remove
+ the embed directive from the POM file, rebuild and reload. Did you see what you expected?
 * Now, uninstall the `trial` bundle. Then uninstall the `api` bundle.
 * What error would you get if you now tried to install the run the `trial` bundle?
 * Try it to confirm the error message.

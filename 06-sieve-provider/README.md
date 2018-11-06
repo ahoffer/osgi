@@ -80,16 +80,23 @@ Look for `algo = sieve`
 ### Step 09 - Query using service properties and a filter string
 - OSGi uses a query language called LDAP filters. We will use and LDAP filter to get the 
 the sieve service provider. The LDAP `"(algo=sieve)"`
-- There are no handy shortcut methods for us. First, get the service reference using the 
-LDAP filter. 
+- There are no handy shortcut methods for us. We have to access the system bundle context using
+the predined property `$.context`. Try: 
 
-`sref=($.context getServiceReferences api.Factorizer "(algo=sieve)") 0`
+      $.context getServiceReferences api.Factorizer "(algo=sieve)"
 
-The command `getServiceReferences` return a list,
-so we have to append a `0` to ask for its first element.
+The command returns an array of service references. It should have one element, the reference
+to the sieve provider. Let's check how many elements in the array -- it should be 1.
 
+     ($.context getServiceReferences api.Factorizer "(algo=sieve)") length
 
-Then get the actual service object:
+Get the first element, index 0, of the array (the service reference)
+and store it in a "shell" variable:
+
+    sref=($.context getServiceReferences api.Factorizer "(algo=sieve)") 0
+    
+
+Now get the actual provider object and store it in another shell variable:
 
       provider=$.context getService $sref
       
@@ -101,13 +108,10 @@ provider. Execute:
 Finally, invoke the service:
 
       $provider getFactors 42
-     
-
  
 ### Take Away
 - A service is defined by a **Java interface**
-- An implementer of a service is called a service provider.
-Often it is just referred to as an **Impl**
+- An implementer of a service is called a service provider or an implementation.
 - Services are published by the OSGi runtime. 
-- Find service providers by the interfaces they implement
-- LDAP filters allow you to use service properties to find a specific service
+- Find service providers by the interfaces they implement.
+- LDAP filters allow you to use service properties to find a specific service provider.

@@ -20,12 +20,12 @@ needs to be between 1.0.0, but less than version 2.0.0.
 In plain-old Java, packages only have names. For the Java Virtual Machine, two packages that 
 both have the name `api` are the same thing. The JVM doesn't make a distinction. OSGi adds 
 extra information about a package, like its version number in the MANIFEST.MF file. The maven
-bundle plugin automatially generates the import directive for your bundle.
+bundle plugin automatically generates the import directive for your bundle.
 
 ## Export
 OSGi bundles also export Java packages. Exporting a Java package makes it visible to the entire
 OSGi environment. The bundle informs the OSGi runtime what packages it wants to expose using a 
-header in the MANIFEST.MF file. For example, here is a line from the `factorizer-api` Maven
+header in the MANIFEST.MF file. For example, here is a line from the `api` Maven
 module:
 
 ```text
