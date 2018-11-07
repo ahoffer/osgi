@@ -61,7 +61,7 @@ New terms:
 <artifactId>blueprint</artifactId>
 <version>1.0-SNAPSHOT</version>
 ```
-* Create a new Java class `MyBean` in a package named `blueprintlesson`
+* Create a new Java class `MyBean` in a package named `blueprint`
 * Add a public void method named `myInitMethod`. In the method, print something to `System.out`
   
 ### Step 02 - Create the blueprint file
