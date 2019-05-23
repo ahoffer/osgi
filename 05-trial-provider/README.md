@@ -48,14 +48,13 @@ Read the list below to make sure you covered everything:
  * Add the `packaging` directive `bundle` 
  * Add the maven bundle plugin
  
- 
 #### Step 5 - Embed the math library in the bundle file
 * Read about bundle [imports, exports and embedded artifacts](imports-exports-and-embedding.md).
 * Configure the maven bundle plugin to embed the Apache math library. Try to complete this 
 step without looking at the sample solution. After working on it for a 2 minutes, compare
 what you write with the sample solution.
 
-### Step 6 - Reigster the service provider with OSGi
+#### Step 6 - Reigster the service provider with OSGi
 * Create a blueprint XML file for this Maven module.
 * This bit of XML is enough to create an instance of the `TrialDivisionProvider` and register it:
 ```xml
@@ -72,7 +71,7 @@ service registration. Create a key-value pair. Make the key `name` and the value
 `trial-division`. Finally, create a new instance of the class `trial.TrialDivisionProvider`
 to actually provide the service.
 
-### Step 7 - Build, install, and test the `trial` service provider
+#### Step 7 - Build, install, and test the `trial` service provider
 * Remember, trial bundle imports the Java package `api`. Be sure the `api` bundle is loaded 
 into the OSGi runtime first.
 * Use the Karaf `capabilities` command to verify the bundle provides the `api.Factorizer` service. 
@@ -92,7 +91,7 @@ service; [api.Factorizer] with properties:
       (service:get api.Factorizer) getFactors 42
 ```
 
-### Step 8 - What if?
+#### Step 8 - What if?
 * What error would you get if you tried to load this bundle without embedding the library? Remove
  the embed directive from the POM file, rebuild and reload. Did you see what you expected?
 * Now, uninstall the `trial` bundle. Then uninstall the `api` bundle.
