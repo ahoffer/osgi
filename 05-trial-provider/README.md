@@ -50,7 +50,7 @@ Read the list below to make sure you covered everything:
  
  
 #### Step 5 - Embed the math library in the bundle file
-* Read about bundle [imports, exports and embedded artifacts](imports-exports-embedding.md).
+* Read about bundle [imports, exports and embedded artifacts](imports-exports-and-embedding.md).
 * Configure the maven bundle plugin to embed the Apache math library. Try to complete this 
 step without looking at the sample solution. After working on it for a 2 minutes, compare
 what you write with the sample solution.
