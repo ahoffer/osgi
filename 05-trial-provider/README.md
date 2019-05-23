@@ -55,7 +55,7 @@ Read the list below to make sure you covered everything:
 step without looking at the sample solution. After working on it for a 2 minutes, compare
 what you write with the sample solution.
 
-### Reigster the service provider with OSGi
+### Step 5 Reigster the service provider with OSGi
 * Create a blueprint XML file for this Maven module.
 * This bit of XML is enough to create an instance of the `TrialDivisionProvider` and register it:
 ```xml
@@ -72,7 +72,7 @@ service registration. Create a key-value pair. Make the key `name` and the value
 `trial-division`. Finally, create a new instance of the class `trial.TrialDivisionProvider`
 to actually provide the service.
 
-### Step 5 - Build, install, and test the `trial` service provider
+### Step 6 - Build, install, and test the `trial` service provider
 * Remember, trial bundle imports the Java package `api`. Be sure the `api` bundle is loaded 
 into the OSGi runtime first.
 * Use the Karaf `capabilities` command to verify the bundle provides the `api.Factorizer` service. 
@@ -92,7 +92,7 @@ service; [api.Factorizer] with properties:
       (service:get api.Factorizer) getFactors 42
 ```
 
-### Step 6 -- What if?
+### Step 7 -- What if?
 * What error would you get if you tried to load this bundle without embedding the library? Remove
  the embed directive from the POM file, rebuild and reload. Did you see what you expected?
 * Now, uninstall the `trial` bundle. Then uninstall the `api` bundle.
