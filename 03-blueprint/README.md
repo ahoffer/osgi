@@ -89,7 +89,7 @@ mean:
   <bean class="blueprint.MyBean" id="mybean" init-method="myInitMethod"/>
 ```
 
-* Check your understand by reading the comments in the `blurprint.xml` file inside this git 
+* Check your understand by reading the comments in the `blueprint.xml` file inside this git 
 repository.
  
  
