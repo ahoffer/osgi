@@ -86,7 +86,7 @@ ends in `.xml` and is in the magic directory.
 mean:
 
 ```xml
-  <bean class="blueprintlesson.MyBean" id="mybean" init-method="myInitMethod"/>
+  <bean class="blueprint.MyBean" id="mybean" init-method="myInitMethod"/>
 ```
 
 * Check your understand by reading the comments in the `blurprint.xml` file inside this git 
