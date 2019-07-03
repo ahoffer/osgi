@@ -28,7 +28,7 @@ the `SieveProvider.java` file.
 * Compare your blueprint file to the sample solution code.
 
 ### Step 05 - Build, install, and inspect the `sieve` service provider
-Use the `capabilities` command to verify the bundle provides the `api.Factorizer` service. It
+Use the command `services -p <bundle ID>` to verify the bundle provides the `api.Factorizer` service. It
 should look something like:
 
 ```text
@@ -66,7 +66,7 @@ Update the blueprint file to include the new property:
 ```
 
 ### Step 08 - Rebuild and update the bundle in Karaf
-Use the `capabilities` command to see the new service property. It should look something like this:
+Use the command `services -p <bundle ID>`to see the new service property. It should look something like this:
 
 ```text
 service; [api.Factorizer] with properties:
