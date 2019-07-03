@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+<blueprint xmlns="https://osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
 
     <service id="sieve" interface="api.Factorizer">
         <service-properties>
