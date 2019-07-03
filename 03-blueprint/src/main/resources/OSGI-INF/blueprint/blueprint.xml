@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blueprint
-  xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+  xmlns="https://osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
 
   <!--Create a new instance of a class. Give it an ID so we can refer to it later.
   The "container" keeps track of the new object and its ID.
