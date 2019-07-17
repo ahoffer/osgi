@@ -74,7 +74,7 @@ to actually provide the service.
 #### Step 7 - Build, install, and test the `trial` service provider
 * Remember, trial bundle imports the Java package `api`. Be sure the `api` bundle is loaded 
 into the OSGi runtime first.
-* Use the Karaf `capabilities` command to verify the bundle provides the `api.Factorizer` service. 
+* Use the Karaf `services` command to verify the bundle provides the `api.Factorizer` service. 
 Look for something like this:
 
 ```test
