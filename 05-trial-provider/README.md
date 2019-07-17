@@ -59,11 +59,13 @@ what you write with the sample solution.
 * This bit of XML is enough to create an instance of the `TrialDivisionProvider` and register it:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<blueprint>
-  xmlns="https://osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
-  <service id="trial" interface="api.Factorizer">
-    <bean class="trial.TrialDivisionProvider"/>
-  </service>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    <!--OSGi is going to look for an interface in the runtime environment with the provided package/class-->
+    <!--name. It will then create a (single) instance of the TrialDivisionProvider class and "advertise"-->
+    <!--it as provider of the Factorizer service. The provided service can be referred to by its ID, "trial".-->
+    <service id="trial" interface="api.Factorizer">
+        <bean class="trial.TrialDivisionProvider"/>
+    </service>
 </blueprint>
 ```
 In English this reads: I want to register a service provider and give it the ID `trial`. 
