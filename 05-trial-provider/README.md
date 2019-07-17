@@ -64,7 +64,6 @@ what you write with the sample solution.
   </service>
 </blueprint>
 ```
-
 In English this reads: I want to register a service provider and give it the ID `trial`. 
 My service provider implements the `api.Factorizer` service. Add some extra information to the 
 service registration. Create a key-value pair. Make the key `name` and the value 
