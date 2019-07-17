@@ -58,7 +58,9 @@ what you write with the sample solution.
 * Create a blueprint XML file for this Maven module.
 * This bit of XML is enough to create an instance of the `TrialDivisionProvider` and register it:
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <blueprint>
+  xmlns="https://osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
   <service id="trial" interface="api.Factorizer">
     <bean class="trial.TrialDivisionProvider"/>
   </service>
