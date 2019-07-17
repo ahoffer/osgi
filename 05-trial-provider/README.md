@@ -69,10 +69,7 @@ what you write with the sample solution.
 </blueprint>
 ```
 In English this reads: I want to register a service provider and give it the ID `trial`. 
-My service provider implements the `api.Factorizer` service. Add some extra information to the 
-service registration. Create a key-value pair. Make the key `name` and the value 
-`trial-division`. Finally, create a new instance of the class `trial.TrialDivisionProvider`
-to actually provide the service.
+My service provider implements the `api.Factorizer` service. 
 
 #### Step 7 - Build, install, and test the `trial` service provider
 * Remember, trial bundle imports the Java package `api`. Be sure the `api` bundle is loaded 
@@ -80,13 +77,15 @@ into the OSGi runtime first.
 * Use the Karaf `services` command to verify the bundle provides the `api.Factorizer` service. 
 Look for something like this:
 
-```test
-service; [api.Factorizer] with properties:
-   name = trial-division
-   service.bundleid = 129
-   service.id = 132
-   service.scope = bundle
-   ```
+```trial provides:
+[api.Factorizer] 
+```
+
+#### Step 7.5 - Add some extra information to the service registration. 
+Create a key-value pair. Make the key `name` and the value `trial-division`. 
+
+Check it with the command `services -p trial`.
+
 
 * Test the service from the Karaf command line:
 
