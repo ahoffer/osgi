@@ -1,6 +1,6 @@
 # OSGi Learning Laboratory
 
-##Learn the 3 pillars of OSGi:
+## Learn the 3 pillars of OSGi:
 * Modularity
 * Module lifecycle
 * Services
