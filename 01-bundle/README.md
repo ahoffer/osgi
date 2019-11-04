@@ -53,7 +53,7 @@ like _Bundle started!_ annd _Bundle stopped!_
 - Karaf comes with an OSGi runtime environment and a handy command-line-interface for interacting
 with bundles and services.
 - [Download the latest (stable) binary distribution of Apache Karaf](http://karaf.apache.org/download.html) and unzip it
-- Start Karaf
+- Start Karaf from the command line with the `bin/karaf` script. If you are on Windows, use the `karaf.bat` file. If you are on a Mac, you will probably need to make the `karaf script executable first. The command `chmod +x karaf` should change the permission on the file to executable.
 
 
 ### Install and start your bundle

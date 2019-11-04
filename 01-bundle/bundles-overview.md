@@ -16,13 +16,14 @@ These constructs have a loose relationship to each other. If I had to draw a UML
 
 * JAR files are a kind of Maven artifact
 * Bundles are a kind of JAR file
-* Bundles can import, export, or embed packages
+* Bundles can import, export Java packages
+* Bundles can embed artifacts like JAR files
 * Maven builds modules into artifacts
 * Maven modules can contain multiple packages
 * Maven modules can be nested
 * Packages can import classes from other packages
-* Packages can be nested
-* Classes are .java files
+* Java source files are .java files
+* .class files are binary and contain the byte codes for the JVM
 * Classes belong to a package
 
 ## Bundle Lifecycle

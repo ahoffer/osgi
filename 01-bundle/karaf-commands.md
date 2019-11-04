@@ -5,8 +5,12 @@
 2. `bundle:install file:/{bundle_folder}/{filename}`
 3. (Copy the JAR file to Karaf's `deploy` directory)
 
-- Preferred method installation is with the maven address because you can use `bundle:watch` to update the bundle (see below).
+- Preferred method installation is with the maven address because you can use `bundle:watch` to
+ update the bundle (see below).
 - When a bundle is installed it is copied to a cache and is always loaded from the cache. 
+- **The `restart` command always restarts the cached bundle**. To load something that is not in the 
+cache, the bundle has to be *updated* See the section "Updating Bundles". 
+
 
 #### Common bundle commands
 * `bundle:install <mavenUrls>`
