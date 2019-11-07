@@ -4,10 +4,6 @@ Challenge lesson. Can you complete the lesson with minimal instructions? Try it.
 stuck on something longer than 2 minutes on something, check the source code for the lesson 
 and fix the problems.
 
-### Create a new maven module
-Use these maven coordinates for you new module. NOTE: For extra an challenge, use your own 
-names and version for the maven coordinates
-
 ```xml
 <groupId>lesson</groupId>
 <artifactId>logging</artifactId>
@@ -15,13 +11,25 @@ names and version for the maven coordinates
 ```
 
 ### Create a new class
-- NOTE: For a little more challenge, substitute your own package, class, and method names 
-- Create a class named `LoggingActivator` in a package named `lesson`
-- Change the class to implement `BundleActivator`
+- Open your projects' **logging** module
+- Create a class named `LoggingActivator` in a package named `lesson`. NOTE: For a little more 
+challenge, substitute your own package, class, and method names 
+- Change the class to implement the `BundleActivator` interface
 - IntelliJ complains for two different reasons. What are they? How would you fix them?
 
 
-### Create activiator methods
+**NOTE** IntelliJ will probably offer to import the wrong logging classes. The correct
+imports are:
+
+```$xslt
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+```
+
+If you add the imports, IntelliJ will show red lines until the proper dependencies are added to the Maven POM.xml file. Don't worry about that right now.
+If you are following along, it happens in a later step.
+
+### Create activator methods
 - Implement the required interface methods
 - IntelliJ should have one less reason to complain. What is the source of any other errors from 
 the IDE. 

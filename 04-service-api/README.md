@@ -5,22 +5,8 @@ In subsequent lessons we will create implementations to perform the actual facto
 ### Step 1 - OSGi services
 [Read more about what "service" means in OSGi](service-and-interface.md).
 
-### Step 2 - Create a new project
-* Create a new Maven project in your IDE. Do not resuse your existing project.
-* In later steps, you will make three Maven modules and each one will create a bundle.
-  * The first bundle will define the service API (`api`)
-  * The second bundle will define the trial-division service provider (`trial`)
-  * The third bundle will define the  sieve of Eratosthenes provider (`sieve`)
-
-### Step 3 - Create the `api` module and interface
- * Use the IDE to create a new Maven module named `api`
- 
- ```xml
-<groupId>lesson</groupId>
-<artifactId>api</artifactId>
-<version>1.0-SNAPSHOT</version>
-```
- 
+### Step 2 - Create the Java interface
+* Navigate to the **service-api** module in your project. 
 * Add this Java interface:
  
  ```java
@@ -50,4 +36,3 @@ In subsequent lessons we will create implementations to perform the actual facto
  
  ### Why is the module named `api`?
  In the  most general case, we can think of a Java interface or OSGI service as an **API**
- 

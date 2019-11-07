@@ -1,20 +1,16 @@
 # Lesson 01 - First Bundle
 
+**These instructions assume you have read and completed the steps in the "Getting Started"
+section in the parent folder's README.**
+---
+
 ### Modularity in Java, Maven, and OSGi
 - Read about the different views of [modularity](bundles-overview.md)
 - Learn about module lifecycle in OSGi
 
-### Create a maven project
-- Create an *empty* project with your IDE
-- Add a **Maven** module to the project. (In IntelliJ, use File->New->Module). 
-Keeping things consistent will speed debugging during this session. For the modules's Maven 
-coodinates, use:
-
-```xml
-  <groupId>lesson</groupId>
-  <artifactId>bundle</artifactId>
-  <version>1.0-SNAPSHOT</version>
-```
+### Open your Project
+- Open the project your created in the in the "Getting Started" section of the top-level REAMDE.
+- Navigate to the **bundle** module and go to the `bundle/src/main/java` folder.
 
 ### Add an activator class
 - An Activator class is instantiated and run when the OSGi runtime environment loads a bundle.
@@ -22,8 +18,7 @@ coodinates, use:
 put it in a package named `lesson`.
 
 ### Add OSGi framework dependencies
-- The class must implement the `BundleActivator` interface. However, Java does not know 
-about this class. We have to add it as a Maven dependency.
+- The class must implement the `BundleActivator` interface. However, Java does not know about this class. We have to add it as a Maven dependency.
 - Add a OSGi core framework dependencies to the project by editing 
 the POM file to include this dependency:
 
@@ -36,13 +31,11 @@ the POM file to include this dependency:
 ```
 
 ### Implement BundleActivator methods
-- Edit the `MyActivator.java` file. Change the class definition to implement the interface named
-`BundleActivator`
+- Edit the `MyActivator.java` file. Change the class definition to implement the interface named `BundleActivator`
 - Let your IDE import the interface. Then let your IDE implement the interface's methods for you.
-Optionally, edit the .java file and add the `import`, `implement` statements yourself, then 
-define the methods.
-- Add `System.out.println()` statements to the `start()` and `stop()` methods. Print something
-like _Bundle started!_ annd _Bundle stopped!_
+Optionally, edit the .java file and add the `import`, `implement` statements yourself, then define the methods.
+- Add `System.out.println()` statements to the `start()` and `stop()` methods. 
+Print something like _Bundle started!_ and _Bundle stopped!_
 
 ### Build your bundle
 - Invoke maven to **install** the bundle. E.g. `mvn install`
@@ -50,10 +43,12 @@ like _Bundle started!_ annd _Bundle stopped!_
 - Open the `target` folder and verify there is JAR file 
 
 ### Get Karaf and run it
-- Karaf comes with an OSGi runtime environment and a handy command-line-interface for interacting
-with bundles and services.
-- [Download the latest (stable) binary distribution of Apache Karaf](http://karaf.apache.org/download.html) and unzip it
-- Start Karaf from the command line with the `bin/karaf` script. If you are on Windows, use the `karaf.bat` file. If you are on a Mac, you will probably need to make the `karaf script executable first. The command `chmod +x karaf` should change the permission on the file to executable.
+- Karaf comes with an OSGi runtime environment and a handy command-line-interface
+for interacting with bundles and services.
+- [Download the latest (stable) binary distribution of Apache Karaf](http://karaf.apache.org/download.html) and unzip it.
+- Start Karaf from the command line with the `bin/karaf` script. If you are on Windows, 
+use the `karaf.bat` file. If you are on a Mac, you will probably need to make the karaf script 
+executable first. The command `chmod +x karaf` should change the permission on the file to executable.
 
 
 ### Install and start your bundle

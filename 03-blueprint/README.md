@@ -1,4 +1,4 @@
-# Leson 03 - The OSGi Blueprint Specification
+# Lesson 03 - The OSGi Blueprint Specification
 The objectives of this lesson are:
 * Understand the basics of containers, beans, and declarative specifications.
 * Use Apache Aries to create a bean and invoke a method on it.
@@ -55,12 +55,7 @@ New terms:
   
   
 ### Step 01 - Setup
-* Create a new maven module with these coordinates:
-```xml
-<groupId>lesson</groupId>
-<artifactId>blueprint</artifactId>
-<version>1.0-SNAPSHOT</version>
-```
+* Navigate to the **blueprint** module in IntelliJ
 * Create a new Java class `MyBean` in a package named `blueprint`
 * Add a public void method named `myInitMethod`. In the method, print something to `System.out`
   

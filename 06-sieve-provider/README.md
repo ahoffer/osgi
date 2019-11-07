@@ -1,15 +1,8 @@
 ## Lesson 08 - Implementing a _second_ service provider
  
 
-### Step 01 - Create the `sieve` module
-* The Maven module `sieve` will use a different factoring algorithm than `trial`. 
-* Create a maven module with these coordinates:
-
-```xml
-<groupId>lesson</groupId>
-<artifactId>sieve</artifactId>
-<version>1.0-SNAPSHOT</version>
-```
+### Step 01 - Open your projectCreate the `sieve` module
+* Navigate to the **sieve-provider** module.
 
 ### Step 02 - Create the service provider class
 

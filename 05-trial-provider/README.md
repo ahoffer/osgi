@@ -1,24 +1,14 @@
 # Leson 05 - Implementing a Service Provider
-In this lesson, we implement a service that actually factors a number. 
- 
- #### Step 1 - Create the `trial` module
- This module will hold the first implementation of our `Factorizer` service. Use It is called
- `trial` because that is the name of the factoring algorithm. The math library keeps a 
- list of prime numbers. The algorithm keeps trying to divide the input by the prime numbers
- until the input is fully decomposed.
- 
- The maven coordinates used by the sample solution are:
- coordinates:
- 
- ```xml
-<groupId>lesson</groupId>
-<artifactId>trial</artifactId>
-<version>1.0-SNAPSHOT</version>
-```
+In this lesson, we implement a service provider to factor numbers.  
 
 
+#### Step 1 - Open the module
+* Navigate to the **trial-provider** module in your project. This module will hold the first implementation of our `Factorizer` service. It is called
+ `trial` because that is the name of the factoring algorithm. 
+ 
 #### Step 2 - Add the Apache math library.
-We are not writing the factoring algorithm. We will use an Apache library to do the work.
+We are not writing the factoring algorithm. We will use an Apache library to do the work. The math library keeps a list of prime numbers. The algorithm keeps trying to divide the input by the prime numbers until the input is fully decomposed.
+
 Add this dependency to the module's POM file:
 
 ```xml
